@@ -1,0 +1,37 @@
+import {
+  Moon,
+  Sun,
+  Zap,
+  Waves,
+  Snowflake,
+  Leaf,
+  Palette,
+  Building2,
+  Sparkles,
+  AudioWaveform,
+  MoonStar,
+  TreeDeciduous,
+  CloudLightning,
+  Lightbulb,
+} from "lucide-react";
+
+export const THEMES = [
+  { id: "dark", name: "Dark", icon: Moon },
+  { id: "light", name: "Light", icon: Lightbulb },
+  { id: "steelwave", name: "Steel Wave", icon: Zap },
+  { id: "neonpunk", name: "Neon Punk", icon: Sparkles },
+  { id: "synthwave", name: "Synthwave", icon: AudioWaveform },
+  { id: "verydark", name: "Very Dark", icon: MoonStar },
+  { id: "summer", name: "Summer Breeze", icon: Sun },
+  { id: "oceanic", name: "Oceanic Abyss", icon: Waves },
+  { id: "forest", name: "Forest Echo", icon: TreeDeciduous },
+  { id: "urban", name: "Urban Pulse", icon: Building2 },
+  { id: "autumn", name: "Autumn Leaves", icon: Leaf },
+  { id: "winter", name: "Winter Chill", icon: Snowflake },
+  { id: "pastel-bloom", name: "Pastel Bloom", icon: Palette },
+  {
+    id: "thunderstorm-strike",
+    name: "Thunderstorm Strike",
+    icon: CloudLightning,
+  },
+];

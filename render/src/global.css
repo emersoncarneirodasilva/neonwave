@@ -1,0 +1,1800 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/* =========================
+   NEONWAVE THEME — GLOBAL CSS
+========================= */
+
+/* =========================
+   DARK THEME — DEFAULT
+========================= */
+:root {
+  /* Backgrounds */
+  --bg: #0b0f14;
+  --bg-primary: #000000;
+  --surface: #111827;
+  --surface-muted: #1f2937;
+
+  /* Navlink active bg */
+  --navlink-bg-active: #ffffff1a;
+
+  /* Brand */
+  --primary: #22d3ee;
+  --primary-hover: #06b6d4;
+  --secondary: #a855f7;
+
+  /* Text */
+  --text-primary: #e5e7eb;
+  --text-muted: #9ca3af;
+  --text-disabled: #6b7280;
+
+  /* Hover */
+  --hover-bg: rgba(255, 255, 255, 0.06);
+  --hover-bg-strong: rgba(255, 255, 255, 0.1);
+
+  /* States */
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+
+  /* Borda */
+  --border: rgba(255, 255, 255, 0.1);
+
+  /* Input background */
+  --bg-input: rgba(255, 255, 255, 0.1);
+
+  /* UI */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* Ícones */
+  --icon-default: var(--text-primary);
+  --icon-hover: var(--primary);
+  --icon-edit: #3b82f6;
+  --icon-danger: #ef4444;
+
+  /* Buttons hover (dark) */
+  --btn-primary-hover: #06b6d4;
+  --btn-primary-active: #3b82f6;
+  --btn-secondary-hover: #3b82f6;
+  --btn-secondary-active: #2563eb;
+  --btn-danger-hover: #ef4444;
+  --btn-danger-active: #dc2626;
+
+  /* Modal */
+  --modal-overlay: rgba(0, 0, 0, 0.7);
+  --modal-bg: var(--surface);
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-input-bg: var(--bg-input);
+  --modal-input-border: var(--border);
+  --modal-input-focus: var(--primary);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--primary-hover);
+  --modal-btn-primary-text: var(--bg-primary);
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: #ef4444;
+  --modal-btn-danger-hover: #dc2626;
+  --modal-btn-danger-text: var(--bg-primary);
+}
+
+/*  =========================
+   LIGHT THEME
+ ========================= */
+:root[data-theme="light"] {
+  /* Backgrounds */
+  --bg: #f5f5f5;
+  --bg-primary: #ffffff;
+  --surface: #e5e7eb;
+  --surface-muted: #d1d5db;
+
+  /* Navlink active bg */
+  --navlink-bg-active: #0000000d;
+
+  /* Brand */
+  --primary: #22d3ee;
+  --primary-hover: #06b6d4;
+  --secondary: #a855f7;
+
+  /* Text */
+  --text-primary: #111827;
+  --text-muted: #6b7280;
+  --text-disabled: #9ca3af;
+
+  /* Hover */
+  --hover-bg: rgba(0, 0, 0, 0.08);
+  --hover-bg-strong: rgba(0, 0, 0, 0.12);
+
+  /* States */
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+
+  /* Borda */
+  --border: #0000001a;
+
+  /* Input background */
+  --bg-input: rgba(0, 0, 0, 0.05);
+
+  /* UI */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* Ícones */
+  --icon-default: var(--text-primary);
+  --icon-hover: var(--primary-hover);
+  --icon-edit: #2563eb;
+  --icon-danger: #dc2626;
+
+  /* Buttons hover (light) */
+  --btn-primary-hover: #06b6d4;
+  --btn-primary-active: #3b82f6;
+  --btn-secondary-hover: #3b82f6;
+  --btn-secondary-active: #2563eb;
+  --btn-danger-hover: #ef4444;
+  --btn-danger-active: #dc2626;
+
+  /* Modal */
+  --modal-overlay: rgba(0, 0, 0, 0.5);
+  --modal-bg: var(--bg-primary);
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-input-bg: var(--bg-input);
+  --modal-input-border: var(--border);
+  --modal-input-focus: var(--primary);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--primary-hover);
+  --modal-btn-primary-text: var(--bg-primary);
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: #dc2626;
+  --modal-btn-danger-hover: #b91c1c;
+  --modal-btn-danger-text: var(--bg-primary);
+}
+
+/*  =========================
+   STEELWAVE THEME 
+ ========================= */
+:root[data-theme="steelwave"] {
+  /* Backgrounds */
+  --bg: #7890a8;
+  --bg-primary: #6f879e;
+  --surface: #6b8196;
+  --surface-muted: #5f7488;
+
+  /* Navlink active bg */
+  --navlink-bg-active: rgba(255, 255, 255, 0.12);
+
+  /* Brand */
+  --primary: #7dd3fc; /* azul claro */
+  --primary-hover: #38bdf8;
+  --secondary: #c7d2fe;
+
+  /* Text (mais claro e suave) */
+  --text-primary: #f1f5f9; /* quase branco */
+  --text-muted: #d1d9e2;
+  --text-disabled: #b6c2ce;
+
+  /* Hover */
+  --hover-bg: rgba(255, 255, 255, 0.08);
+  --hover-bg-strong: rgba(255, 255, 255, 0.14);
+
+  /* States */
+  --success: #4ade80;
+  --danger: #f87171;
+  --warning: #facc15;
+
+  /* Border */
+  --border: rgba(255, 255, 255, 0.18);
+
+  /* Input background (mais escuro e elegante) */
+  --bg-input: rgba(15, 23, 42, 0.25);
+
+  /* UI */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* Ícones */
+  --icon-default: var(--text-primary);
+  --icon-hover: var(--primary);
+  --icon-edit: #93c5fd;
+  --icon-danger: #f87171;
+
+  /* Buttons hover */
+  --btn-primary-hover: #7dd3fc;
+  --btn-primary-active: #38bdf8;
+  --btn-secondary-hover: #c7d2fe;
+  --btn-secondary-active: #a5b4fc;
+  --btn-danger-hover: #f87171;
+  --btn-danger-active: #ef4444;
+
+  /* Modal */
+  --modal-overlay: rgba(15, 23, 42, 0.55);
+  --modal-bg: #5f7488;
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-input-bg: rgba(15, 23, 42, 0.35);
+  --modal-input-border: var(--border);
+  --modal-input-focus: var(--primary);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--primary-hover);
+  --modal-btn-primary-text: #0b1220;
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: #f87171;
+  --modal-btn-danger-hover: #ef4444;
+  --modal-btn-danger-text: #0b1220;
+}
+
+/* =========================
+   NEONPUNK THEME 
+========================= */
+:root[data-theme="neonpunk"] {
+  /* -------------------------
+     BACKGROUNDS
+  ------------------------- */
+  --bg: #03010a; /* fundo geral, preto absoluto */
+  --bg-primary: #050119; /* fundo de containers */
+  --surface: #0a0126; /* cards / listas */
+  --surface-muted: #1b013f; /* hovers leves */
+
+  /* Navlink active bg */
+  --navlink-bg-active: #ff00ff33; /* magenta neon translúcido */
+
+  /* -------------------------
+     BRAND / ACCENT COLORS
+  ------------------------- */
+  --primary: #00fff7; /* cyan neon intenso */
+  --primary-hover: #00ffff; /* cyan neon hover */
+  --secondary: #ff00ff; /* magenta neon forte */
+  --tertiary: #fef500; /* amarelo neon para destaques */
+
+  /* -------------------------
+     TEXT COLORS
+  ------------------------- */
+  --text-primary: #e0f7ff; /* quase branco azulado */
+  --text-muted: #b0cfff;
+  --text-disabled: #7070a0;
+
+  /* -------------------------
+     HOVER / FEEDBACK COLORS
+  ------------------------- */
+  --hover-bg: rgba(0, 255, 247, 0.15); /* hover leve */
+  --hover-bg-strong: rgba(255, 0, 255, 0.2); /* hover mais intenso */
+
+  /* -------------------------
+     STATE COLORS
+  ------------------------- */
+  --success: #00ff7f;
+  --danger: #ff3366;
+  --warning: #ffee00;
+
+  /* -------------------------
+     BORDERS
+  ------------------------- */
+  --border: rgba(0, 255, 247, 0.4);
+
+  /* -------------------------
+     INPUTS (SOLIDOS E COM GLOW)
+  ------------------------- */
+  --bg-input: #0c0026; /* roxo escuro sólido */
+  --input-border: rgba(0, 255, 247, 0.6);
+  --input-focus: var(--primary);
+  --modal-input-bg: #0c0026;
+  --input-glow: 0 0 6px var(--primary);
+
+  /* -------------------------
+     UI / RADIUS
+  ------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* -------------------------
+     ICON COLORS
+  ------------------------- */
+  --icon-default: #e0f7ff;
+  --icon-hover: var(--primary);
+  --icon-edit: var(--secondary);
+  --icon-danger: #ff3366;
+  --icon-glow: 0 0 4px var(--primary);
+
+  /* -------------------------
+     BUTTON STATES (COM GLOW)
+  ------------------------- */
+  --btn-primary-hover: #00ffff;
+  --btn-primary-active: #00fff7;
+  --btn-primary-glow: 0 0 8px var(--primary);
+
+  --btn-secondary-hover: #ff00ff;
+  --btn-secondary-active: #dd00dd;
+  --btn-secondary-glow: 0 0 8px var(--secondary);
+
+  --btn-danger-hover: #ff3366;
+  --btn-danger-active: #cc0033;
+  --btn-danger-glow: 0 0 6px var(--danger);
+
+  /* -------------------------
+     MODAL COLORS
+  ------------------------- */
+  --modal-overlay: rgba(3, 1, 10, 0.85);
+  --modal-bg: #0a0126;
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--primary-hover);
+  --modal-btn-primary-text: #020617;
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: #ff3366;
+  --modal-btn-danger-hover: #cc0033;
+  --modal-btn-danger-text: #020617;
+}
+
+/*  =========================
+   SYNTHWAVE THEME
+ ========================= */
+:root[data-theme="synthwave"] {
+  /* =========================
+     BACKGROUNDS
+  ========================= */
+  --bg: #0a0614; /* fundo geral */
+  --bg-primary: #120b24; /* base de layouts */
+  --surface: #1a1136; /* cards / listas */
+  --surface-muted: #24184a; /* hovers leves */
+
+  /* Navlink active bg */
+  --navlink-bg-active: rgba(168, 85, 247, 0.18);
+
+  /* =========================
+     BRAND / ACCENT
+  ========================= */
+  --primary: #a855f7; /* roxo neon */
+  --primary-hover: #c084fc;
+  --secondary: #22d3ee; /* ciano urbano */
+
+  /* =========================
+     TEXT
+  ========================= */
+  --text-primary: #f5f3ff; /* quase branco */
+  --text-muted: #d6ccff;
+  --text-disabled: #8b7fcf;
+
+  /* =========================
+     HOVER / FEEDBACK
+  ========================= */
+  --hover-bg: rgba(168, 85, 247, 0.14);
+  --hover-bg-strong: rgba(34, 211, 238, 0.18);
+
+  /* =========================
+     STATES
+  ========================= */
+  --success: #4ade80;
+  --danger: #fb7185;
+  --warning: #fde047;
+
+  /* =========================
+     BORDERS
+  ========================= */
+  --border: rgba(168, 85, 247, 0.28);
+
+  /* =========================
+     INPUTS (SOLIDOS, NAVLINK BASE)
+  ========================= */
+  --bg-input: #1c1238; /* mesma cor do navlink ativo */
+  --input-border: rgba(168, 85, 247, 0.35);
+  --input-focus: var(--secondary);
+  --modal-input-bg: #1c1238;
+
+  /* =========================
+     UI
+  ========================= */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* =========================
+     ICONS
+  ========================= */
+  --icon-default: #ede9fe;
+  --icon-hover: var(--primary);
+  --icon-edit: #22d3ee;
+  --icon-danger: #fb7185;
+
+  /* =========================
+     BUTTON STATES
+  ========================= */
+  --btn-primary-hover: #c084fc;
+  --btn-primary-active: #a855f7;
+  --btn-secondary-hover: #22d3ee;
+  --btn-secondary-active: #06b6d4;
+  --btn-danger-hover: #fb7185;
+  --btn-danger-active: #e11d48;
+
+  /* =========================
+     MODAL
+  ========================= */
+  --modal-overlay: rgba(10, 6, 20, 0.85);
+  --modal-bg: #1a1136;
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--primary-hover);
+  --modal-btn-primary-text: #020617;
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: #fb7185;
+  --modal-btn-danger-hover: #e11d48;
+  --modal-btn-danger-text: #020617;
+}
+
+/* =========================
+   VERY DARK THEME
+========================= */
+:root[data-theme="verydark"] {
+  /* -------------------------
+     BACKGROUNDS
+  ------------------------- */
+  --bg: #000000; /* fundo absoluto, preto puro */
+  --bg-primary: #0a0a0a; /* fundo de containers */
+  --surface: #111111; /* cards / listas */
+  --surface-muted: #1a1a1a; /* hovers leves */
+
+  /* Navlink active bg */
+  --navlink-bg-active: #33333355; /* leve destaque transparente */
+
+  /* -------------------------
+     BRAND / ACCENT COLORS
+  ------------------------- */
+  --primary: #1e90ff; /* azul vibrante */
+  --primary-hover: #63b3ed; /* azul hover */
+  --secondary: #a855f7; /* roxo secundário */
+  --tertiary: #facc15; /* amarelo para destaques */
+
+  /* -------------------------
+     TEXT COLORS
+  ------------------------- */
+  --text-primary: #e5e5e5; /* texto claro principal */
+  --text-muted: #aaaaaa; /* texto secundário */
+  --text-disabled: #555555; /* texto desabilitado */
+
+  /* -------------------------
+     HOVER / FEEDBACK COLORS
+  ------------------------- */
+  --hover-bg: rgba(255, 255, 255, 0.05);
+  --hover-bg-strong: rgba(255, 255, 255, 0.1);
+
+  /* -------------------------
+     STATE COLORS
+  ------------------------- */
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+
+  /* -------------------------
+     BORDERS
+  ------------------------- */
+  --border: rgba(255, 255, 255, 0.1);
+
+  /* -------------------------
+     INPUTS
+  ------------------------- */
+  --bg-input: #111111;
+  --input-border: rgba(255, 255, 255, 0.2);
+  --input-focus: var(--primary);
+  --modal-input-bg: #111111;
+  --input-glow: 0 0 6px var(--primary);
+
+  /* -------------------------
+     UI / RADIUS
+  ------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* -------------------------
+     ICON COLORS
+  ------------------------- */
+  --icon-default: #e5e5e5;
+  --icon-hover: var(--primary);
+  --icon-edit: #3b82f6;
+  --icon-danger: #ef4444;
+  --icon-glow: 0 0 4px var(--primary);
+
+  /* -------------------------
+     BUTTON STATES
+  ------------------------- */
+  --btn-primary-hover: #63b3ed;
+  --btn-primary-active: #1e90ff;
+  --btn-primary-glow: 0 0 8px var(--primary);
+
+  --btn-secondary-hover: #a855f7;
+  --btn-secondary-active: #9333ea;
+  --btn-secondary-glow: 0 0 6px var(--secondary);
+
+  --btn-danger-hover: #ef4444;
+  --btn-danger-active: #dc2626;
+  --btn-danger-glow: 0 0 6px var(--danger);
+
+  /* -------------------------
+     MODAL COLORS
+  ------------------------- */
+  --modal-overlay: rgba(0, 0, 0, 0.85);
+  --modal-bg: #111111;
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--btn-primary-hover);
+  --modal-btn-primary-text: #000000;
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: #ef4444;
+  --modal-btn-danger-hover: #dc2626;
+  --modal-btn-danger-text: #000000;
+}
+
+/* =========================
+   SUMMER BREEZE THEME 
+========================= */
+:root[data-theme="summer"] {
+  /* -------------------------
+     BACKGROUNDS
+  ------------------------- */
+  --bg: #fff8e7; /* areia clara */
+  --bg-primary: #fff1d6; /* containers / cards */
+  --surface: #ffe8b0; /* listas / cards secundários */
+  --surface-muted: #ffdd80; /* hover leve em elementos */
+
+  /* Navlink active bg */
+  --navlink-bg-active: #ffd16633; /* amarelo translúcido */
+
+  /* -------------------------
+     BRAND / ACCENT COLORS
+  ------------------------- */
+  --primary: #ff9f1c; /* laranja ensolarado */
+  --primary-hover: #ffb347; /* laranja claro hover */
+  --secondary: #00aaff; /* azul água para botões de editar */
+  --tertiary: #ff4d6d; /* vermelho destaque */
+
+  /* -------------------------
+     TEXT COLORS
+  ------------------------- */
+  --text-primary: #2b2b2b; /* texto principal escuro */
+  --text-muted: #555555; /* texto secundário */
+  --text-disabled: #aaaaaa; /* texto desabilitado */
+
+  /* -------------------------
+     HOVER / FEEDBACK COLORS
+  ------------------------- */
+  --hover-bg: rgba(255, 159, 28, 0.15); /* hover leve laranja */
+  --hover-bg-strong: rgba(
+    0,
+    170,
+    255,
+    0.2
+  ); /* hover azul nos elementos secundários */
+
+  /* -------------------------
+     STATE COLORS
+  ------------------------- */
+  --success: #22c55e; /* verde suave */
+  --danger: #ef4444; /* vermelho padrão */
+  --warning: #f59e0b; /* amarelo brilhante */
+
+  /* -------------------------
+     BORDERS
+  ------------------------- */
+  --border: rgba(255, 159, 28, 0.3);
+
+  /* -------------------------
+     INPUTS
+  ------------------------- */
+  --bg-input: #fff1d6; /* areia clara sólida */
+  --input-border: rgba(255, 159, 28, 0.5);
+  --input-focus: var(--primary);
+  --modal-input-bg: #fff1d6;
+  --input-glow: 0 0 6px var(--primary);
+
+  /* -------------------------
+     UI / RADIUS
+  ------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* -------------------------
+     ICON COLORS
+  ------------------------- */
+  --icon-default: #2b2b2b;
+  --icon-hover: var(--primary);
+  --icon-edit: var(--secondary); /* azul para editar */
+  --icon-danger: var(--tertiary);
+  --icon-glow: 0 0 4px var(--primary);
+
+  /* -------------------------
+     BUTTON STATES
+  ------------------------- */
+  --btn-primary-hover: #ffb347;
+  --btn-primary-active: #ff9f1c;
+  --btn-primary-glow: 0 0 8px var(--primary);
+
+  --btn-secondary-hover: #00aaff; /* azul hover secundário */
+  --btn-secondary-active: #0088cc;
+  --btn-secondary-glow: 0 0 6px var(--secondary);
+
+  --btn-danger-hover: #ff4d6d;
+  --btn-danger-active: #e0435a;
+  --btn-danger-glow: 0 0 6px var(--tertiary);
+
+  /* -------------------------
+     MODAL COLORS
+  ------------------------- */
+  --modal-overlay: rgba(0, 0, 0, 0.25);
+  --modal-bg: #fff1d6;
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--btn-primary-hover);
+  --modal-btn-primary-text: #ffffff;
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: var(--tertiary);
+  --modal-btn-danger-hover: #e0435a;
+  --modal-btn-danger-text: #ffffff;
+}
+
+/* =========================
+   OCEANIC THEME 
+========================= */
+:root[data-theme="oceanic"] {
+  /* -------------------------
+     BACKGROUNDS
+  ------------------------- */
+  --bg: #001f3f; /* azul profundo, fundo geral */
+  --bg-primary: #003366; /* containers / cards */
+  --surface: #004080; /* listas / cards secundários */
+  --surface-muted: #0059b3; /* hover leve em elementos */
+
+  /* Navlink active bg */
+  --navlink-bg-active: #00bfff33; /* azul translúcido */
+
+  /* -------------------------
+     BRAND / ACCENT COLORS
+  ------------------------- */
+  --primary: #00bfff; /* azul turquesa vibrante */
+  --primary-hover: #33ccff; /* azul claro hover */
+  --secondary: #0077b6; /* azul mais escuro para botões de editar */
+  --tertiary: #ff6f61; /* coral / vermelho para destaque */
+
+  /* -------------------------
+     TEXT COLORS
+  ------------------------- */
+  --text-primary: #e0f7ff; /* texto claro contrastante */
+  --text-muted: #99ccee; /* texto secundário */
+  --text-disabled: #667788; /* texto desabilitado */
+
+  /* -------------------------
+     HOVER / FEEDBACK COLORS
+  ------------------------- */
+  --hover-bg: rgba(0, 191, 255, 0.15); /* hover leve azul turquesa */
+  --hover-bg-strong: rgba(
+    0,
+    119,
+    182,
+    0.2
+  ); /* hover mais intenso azul escuro */
+
+  /* -------------------------
+     STATE COLORS
+  ------------------------- */
+  --success: #22c55e; /* verde água */
+  --danger: #ef4444; /* vermelho padrão */
+  --warning: #f59e0b; /* amarelo suave */
+
+  /* -------------------------
+     BORDERS
+  ------------------------- */
+  --border: rgba(0, 191, 255, 0.4);
+
+  /* -------------------------
+     INPUTS
+  ------------------------- */
+  --bg-input: #003366; /* azul container sólido */
+  --input-border: rgba(0, 191, 255, 0.6);
+  --input-focus: var(--primary);
+  --modal-input-bg: #003366;
+  --input-glow: 0 0 6px var(--primary);
+
+  /* -------------------------
+     UI / RADIUS
+  ------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* -------------------------
+     ICON COLORS
+  ------------------------- */
+  --icon-default: #e0f7ff;
+  --icon-hover: var(--primary);
+  --icon-edit: var(--secondary);
+  --icon-danger: var(--tertiary);
+  --icon-glow: 0 0 4px var(--primary);
+
+  /* -------------------------
+     BUTTON STATES
+  ------------------------- */
+  --btn-primary-hover: #33ccff;
+  --btn-primary-active: #00bfff;
+  --btn-primary-glow: 0 0 8px var(--primary);
+
+  --btn-secondary-hover: #0077b6;
+  --btn-secondary-active: #005f99;
+  --btn-secondary-glow: 0 0 6px var(--secondary);
+
+  --btn-danger-hover: #ff6f61;
+  --btn-danger-active: #e0554f;
+  --btn-danger-glow: 0 0 6px var(--tertiary);
+
+  /* -------------------------
+     MODAL COLORS
+  ------------------------- */
+  --modal-overlay: rgba(0, 0, 0, 0.6);
+  --modal-bg: #004080;
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--btn-primary-hover);
+  --modal-btn-primary-text: #001f3f;
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: var(--tertiary);
+  --modal-btn-danger-hover: #e0554f;
+  --modal-btn-danger-text: #001f3f;
+}
+
+/* =========================
+   FOREST THEME 
+========================= */
+:root[data-theme="forest"] {
+  /* -------------------------
+     BACKGROUNDS
+  ------------------------- */
+  --bg: #0b2a1f; /* verde escuro profundo */
+  --bg-primary: #123c2b; /* containers / cards */
+  --surface: #1a4d38; /* listas / cards secundários */
+  --surface-muted: #2a6a4f; /* hover leve em elementos */
+
+  /* Navlink active bg */
+  --navlink-bg-active: #4caf5033; /* verde translúcido */
+
+  /* -------------------------
+     BRAND / ACCENT COLORS
+  ------------------------- */
+  --primary: #4caf50; /* verde vibrante */
+  --primary-hover: #81c784; /* verde claro hover */
+  --secondary: #8bc34a; /* verde limão suave para editar */
+  --tertiary: #ff9800; /* laranja natural para destaques */
+
+  /* -------------------------
+     TEXT COLORS
+  ------------------------- */
+  --text-primary: #e0f2f1; /* texto claro contrastante */
+  --text-muted: #b0c4b1; /* texto secundário */
+  --text-disabled: #667766; /* texto desabilitado */
+
+  /* -------------------------
+     HOVER / FEEDBACK COLORS
+  ------------------------- */
+  --hover-bg: rgba(76, 175, 80, 0.15); /* hover verde suave */
+  --hover-bg-strong: rgba(139, 195, 74, 0.2); /* hover mais intenso */
+
+  /* -------------------------
+     STATE COLORS
+  ------------------------- */
+  --success: #22c55e; /* verde água */
+  --danger: #ef4444; /* vermelho alerta */
+  --warning: #f59e0b; /* amarelo natural */
+
+  /* -------------------------
+     BORDERS
+  ------------------------- */
+  --border: rgba(76, 175, 80, 0.4);
+
+  /* -------------------------
+     INPUTS
+  ------------------------- */
+  --bg-input: #123c2b; /* container sólido */
+  --input-border: rgba(76, 175, 80, 0.5);
+  --input-focus: var(--primary);
+  --modal-input-bg: #123c2b;
+  --input-glow: 0 0 6px var(--primary);
+
+  /* -------------------------
+     UI / RADIUS
+  ------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* -------------------------
+     ICON COLORS
+  ------------------------- */
+  --icon-default: #e0f2f1;
+  --icon-hover: var(--primary);
+  --icon-edit: var(--secondary);
+  --icon-danger: var(--tertiary);
+  --icon-glow: 0 0 4px var(--primary);
+
+  /* -------------------------
+     BUTTON STATES
+  ------------------------- */
+  --btn-primary-hover: #81c784;
+  --btn-primary-active: #4caf50;
+  --btn-primary-glow: 0 0 8px var(--primary);
+
+  --btn-secondary-hover: #8bc34a;
+  --btn-secondary-active: #689f38;
+  --btn-secondary-glow: 0 0 6px var(--secondary);
+
+  --btn-danger-hover: #ff9800;
+  --btn-danger-active: #e68900;
+  --btn-danger-glow: 0 0 6px var(--tertiary);
+
+  /* -------------------------
+     MODAL COLORS
+  ------------------------- */
+  --modal-overlay: rgba(0, 0, 0, 0.6);
+  --modal-bg: #1a4d38;
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--btn-primary-hover);
+  --modal-btn-primary-text: #0b2a1f;
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: var(--tertiary);
+  --modal-btn-danger-hover: #e68900;
+  --modal-btn-danger-text: #0b2a1f;
+}
+
+/* =========================
+   URBAN PULSE THEME  
+========================= */
+:root[data-theme="urban"] {
+  /* -------------------------
+     BACKGROUNDS
+  ------------------------- */
+  --bg: #0f1115; /* cinza escuro profundo, céu noturno urbano */
+  --bg-primary: #1a1c22; /* containers / cards */
+  --surface: #272930; /* listas / cards secundários */
+  --surface-muted: #3a3c45; /* hover leve em elementos */
+
+  /* Navlink active bg */
+  --navlink-bg-active: #00ffe633; /* neon cyan translúcido */
+
+  /* -------------------------
+     BRAND / ACCENT COLORS
+  ------------------------- */
+  --primary: #00ffe6; /* neon cyan vibrante */
+  --primary-hover: #33fff9; /* azul neon hover */
+  --secondary: #ff00ff; /* neon magenta para botões de editar */
+  --tertiary: #ff4d6d; /* vermelho neon para destaques */
+
+  /* -------------------------
+     TEXT COLORS
+  ------------------------- */
+  --text-primary: #e0e0e0; /* quase branco para contraste */
+  --text-muted: #9a9a9a; /* texto secundário */
+  --text-disabled: #5a5a5a; /* texto desabilitado */
+
+  /* -------------------------
+     HOVER / FEEDBACK COLORS
+  ------------------------- */
+  --hover-bg: rgba(0, 255, 230, 0.15); /* hover neon cyan leve */
+  --hover-bg-strong: rgba(
+    255,
+    0,
+    255,
+    0.2
+  ); /* hover neon magenta mais intenso */
+
+  /* -------------------------
+     STATE COLORS
+  ------------------------- */
+  --success: #22c55e; /* verde urbano suave */
+  --danger: #ff3366; /* vermelho neon */
+  --warning: #f59e0b; /* amarelo neon urbano */
+
+  /* -------------------------
+     BORDERS
+  ------------------------- */
+  --border: rgba(0, 255, 230, 0.4);
+
+  /* -------------------------
+     INPUTS
+  ------------------------- */
+  --bg-input: #1a1c22; /* container sólido urbano */
+  --input-border: rgba(0, 255, 230, 0.5);
+  --input-focus: var(--primary);
+  --modal-input-bg: #1a1c22;
+  --input-glow: 0 0 6px var(--primary);
+
+  /* -------------------------
+     UI / RADIUS
+  ------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* -------------------------
+     ICON COLORS
+  ------------------------- */
+  --icon-default: #e0e0e0;
+  --icon-hover: var(--primary);
+  --icon-edit: var(--secondary);
+  --icon-danger: var(--tertiary);
+  --icon-glow: 0 0 4px var(--primary);
+
+  /* -------------------------
+     BUTTON STATES
+  ------------------------- */
+  --btn-primary-hover: #33fff9;
+  --btn-primary-active: #00ffe6;
+  --btn-primary-glow: 0 0 8px var(--primary);
+
+  --btn-secondary-hover: #ff00ff;
+  --btn-secondary-active: #dd00dd;
+  --btn-secondary-glow: 0 0 6px var(--secondary);
+
+  --btn-danger-hover: #ff4d6d;
+  --btn-danger-active: #e0435a;
+  --btn-danger-glow: 0 0 6px var(--tertiary);
+
+  /* -------------------------
+     MODAL COLORS
+  ------------------------- */
+  --modal-overlay: rgba(0, 0, 0, 0.7);
+  --modal-bg: #272930;
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--btn-primary-hover);
+  --modal-btn-primary-text: #0f1115;
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: var(--tertiary);
+  --modal-btn-danger-hover: #e0435a;
+  --modal-btn-danger-text: #0f1115;
+}
+
+/* =========================
+   AUTUMN LEAVES THEME  
+========================= */
+:root[data-theme="autumn"] {
+  /* -------------------------
+     BACKGROUNDS
+  ------------------------- */
+  --bg: #2b1f14; /* marrom escuro, fundo geral */
+  --bg-primary: #3a261a; /* containers / cards */
+  --surface: #4b3320; /* listas / cards secundários */
+  --surface-muted: #5c4325; /* hover leve em elementos */
+
+  /* Navlink active bg */
+  --navlink-bg-active: #ff9f0033; /* laranja translúcido */
+
+  /* -------------------------
+     BRAND / ACCENT COLORS
+  ------------------------- */
+  --primary: #ff7f50; /* laranja intenso, tom de folhas */
+  --primary-hover: #ff9f60; /* laranja claro hover */
+  --secondary: #d2691e; /* marrom quente para editar */
+  --tertiary: #ffd700; /* dourado para destaques */
+
+  /* -------------------------
+     TEXT COLORS
+  ------------------------- */
+  --text-primary: #f5f1e7; /* quase branco suave */
+  --text-muted: #c8b8a3; /* texto secundário */
+  --text-disabled: #8c7b6a; /* texto desabilitado */
+
+  /* -------------------------
+     HOVER / FEEDBACK COLORS
+  ------------------------- */
+  --hover-bg: rgba(255, 127, 80, 0.15); /* hover laranja suave */
+  --hover-bg-strong: rgba(255, 215, 0, 0.2); /* hover dourado */
+
+  /* -------------------------
+     STATE COLORS
+  ------------------------- */
+  --success: #22c55e; /* verde suave */
+  --danger: #ef4444; /* vermelho */
+  --warning: #f59e0b; /* amarelo / dourado */
+
+  /* -------------------------
+     BORDERS
+  ------------------------- */
+  --border: rgba(255, 127, 80, 0.4);
+
+  /* -------------------------
+     INPUTS
+  ------------------------- */
+  --bg-input: #3a261a; /* container sólido */
+  --input-border: rgba(255, 127, 80, 0.5);
+  --input-focus: var(--primary);
+  --modal-input-bg: #3a261a;
+  --input-glow: 0 0 6px var(--primary);
+
+  /* -------------------------
+     UI / RADIUS
+  ------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* -------------------------
+     ICON COLORS
+  ------------------------- */
+  --icon-default: #f5f1e7;
+  --icon-hover: var(--primary);
+  --icon-edit: var(--secondary);
+  --icon-danger: var(--tertiary);
+  --icon-glow: 0 0 4px var(--primary);
+
+  /* -------------------------
+     BUTTON STATES
+  ------------------------- */
+  --btn-primary-hover: #ff9f60;
+  --btn-primary-active: #ff7f50;
+  --btn-primary-glow: 0 0 8px var(--primary);
+
+  --btn-secondary-hover: #d2691e;
+  --btn-secondary-active: #b05510;
+  --btn-secondary-glow: 0 0 6px var(--secondary);
+
+  --btn-danger-hover: #ffd700;
+  --btn-danger-active: #e6c200;
+  --btn-danger-glow: 0 0 6px var(--tertiary);
+
+  /* -------------------------
+     MODAL COLORS
+  ------------------------- */
+  --modal-overlay: rgba(0, 0, 0, 0.6);
+  --modal-bg: #4b3320;
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--btn-primary-hover);
+  --modal-btn-primary-text: #2b1f14;
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: var(--tertiary);
+  --modal-btn-danger-hover: #e6c200;
+  --modal-btn-danger-text: #2b1f14;
+}
+
+/* =========================
+   WINTER CHILL THEME  
+========================= */
+:root[data-theme="winter"] {
+  /* -------------------------
+     BACKGROUNDS
+  ------------------------- */
+  --bg: #0a1b2c; /* azul escuro gelado, fundo geral */
+  --bg-primary: #112d44; /* containers / cards */
+  --surface: #1a3f5c; /* listas / cards secundários */
+  --surface-muted: #2a557a; /* hover leve em elementos */
+
+  /* Navlink active bg */
+  --navlink-bg-active: #99ddff33; /* azul gelo translúcido */
+
+  /* -------------------------
+     BRAND / ACCENT COLORS
+  ------------------------- */
+  --primary: #33ccff; /* azul gelo vibrante */
+  --primary-hover: #66dfff; /* azul claro hover */
+  --secondary: #00aaff; /* azul intenso para botões de editar */
+  --tertiary: #ffffff; /* branco neve para destaques */
+
+  /* -------------------------
+     TEXT COLORS
+  ------------------------- */
+  --text-primary: #e0f7ff; /* texto quase branco gelo */
+  --text-muted: #a0cfe6; /* texto secundário */
+  --text-disabled: #607d8b; /* texto desabilitado */
+
+  /* -------------------------
+     HOVER / FEEDBACK COLORS
+  ------------------------- */
+  --hover-bg: rgba(51, 204, 255, 0.15); /* hover azul gelo leve */
+  --hover-bg-strong: rgba(255, 255, 255, 0.2); /* hover branco translúcido */
+
+  /* -------------------------
+     STATE COLORS
+  ------------------------- */
+  --success: #22c55e; /* verde frio suave */
+  --danger: #ff3366; /* vermelho para alerta */
+  --warning: #f5f59e; /* amarelo gelo leve */
+
+  /* -------------------------
+     BORDERS
+  ------------------------- */
+  --border: rgba(51, 204, 255, 0.4);
+
+  /* -------------------------
+     INPUTS
+  ------------------------- */
+  --bg-input: #112d44; /* container sólido gelado */
+  --input-border: rgba(51, 204, 255, 0.5);
+  --input-focus: var(--primary);
+  --modal-input-bg: #112d44;
+  --input-glow: 0 0 6px var(--primary);
+
+  /* -------------------------
+     UI / RADIUS
+  ------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* -------------------------
+     ICON COLORS
+  ------------------------- */
+  --icon-default: #e0f7ff;
+  --icon-hover: var(--primary);
+  --icon-edit: var(--secondary);
+  --icon-danger: #ff3366;
+  --icon-glow: 0 0 4px var(--primary);
+
+  /* -------------------------
+     BUTTON STATES
+  ------------------------- */
+  --btn-primary-hover: #66dfff;
+  --btn-primary-active: #33ccff;
+  --btn-primary-glow: 0 0 8px var(--primary);
+
+  --btn-secondary-hover: #00aaff;
+  --btn-secondary-active: #0088cc;
+  --btn-secondary-glow: 0 0 6px var(--secondary);
+
+  --btn-danger-hover: #ff3366;
+  --btn-danger-active: #cc0033;
+  --btn-danger-glow: 0 0 6px var(--tertiary);
+
+  /* -------------------------
+     MODAL COLORS
+  ------------------------- */
+  --modal-overlay: rgba(0, 0, 0, 0.6);
+  --modal-bg: #1a3f5c;
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--btn-primary-hover);
+  --modal-btn-primary-text: #0a1b2c;
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: var(--tertiary);
+  --modal-btn-danger-hover: #e6e6e6;
+  --modal-btn-danger-text: #0a1b2c;
+}
+
+/* =========================
+   THUNDERSTORM STRIKE THEME 
+========================= */
+:root[data-theme="thunderstorm-strike"] {
+  /* -------------------------
+     BACKGROUNDS
+  ------------------------- */
+  --bg: #000000; /* preto absoluto */
+  --bg-primary: #111111; /* containers / cards escuros */
+  --surface: #1a1a1a; /* listas / cards secundários */
+  --surface-muted: #2a2a2a; /* hover leve */
+
+  /* Navlink active bg */
+  --navlink-bg-active: #ffd70033; /* amarelo translúcido */
+
+  /* -------------------------
+     BRAND / ACCENT COLORS
+  ------------------------- */
+  --primary: #ffd700; /* amarelo trovão */
+  --primary-hover: #ffea00; /* amarelo mais intenso */
+  --secondary: #f0c808; /* amarelo suave para editar */
+  --tertiary: #ffffff; /* branco para pequenos destaques */
+
+  /* -------------------------
+     TEXT COLORS
+  ------------------------- */
+  --text-primary: #f5f5f5; /* quase branco */
+  --text-muted: #aaaaaa; /* texto secundário */
+  --text-disabled: #555555; /* texto desabilitado */
+
+  /* -------------------------
+     HOVER / FEEDBACK COLORS
+  ------------------------- */
+  --hover-bg: rgba(255, 215, 0, 0.15); /* hover amarelo leve */
+  --hover-bg-strong: rgba(255, 215, 0, 0.3); /* hover mais forte */
+
+  /* -------------------------
+     STATE COLORS
+  ------------------------- */
+  --success: #22c55e; /* verde */
+  --danger: #ff3366; /* vermelho alerta */
+  --warning: #ffd700; /* amarelo trovão */
+
+  /* -------------------------
+     BORDERS
+  ------------------------- */
+  --border: rgba(255, 215, 0, 0.5);
+
+  /* -------------------------
+     INPUTS
+  ------------------------- */
+  --bg-input: #111111; /* container sólido */
+  --input-border: rgba(255, 215, 0, 0.6);
+  --input-focus: var(--primary);
+  --modal-input-bg: #111111;
+  --input-glow: 0 0 10px var(--primary);
+
+  /* -------------------------
+     UI / RADIUS
+  ------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* -------------------------
+     ICON COLORS
+  ------------------------- */
+  --icon-default: #f5f5f5;
+  --icon-hover: var(--primary);
+  --icon-edit: var(--secondary);
+  --icon-danger: #ff3366;
+  --icon-glow: 0 0 8px var(--primary);
+
+  /* -------------------------
+     BUTTON STATES
+  ------------------------- */
+  --btn-primary-hover: #ffea00;
+  --btn-primary-active: #ffd700;
+  --btn-primary-glow: 0 0 12px var(--primary);
+
+  --btn-secondary-hover: #f0c808;
+  --btn-secondary-active: #d4a500;
+  --btn-secondary-glow: 0 0 8px var(--secondary);
+
+  --btn-danger-hover: #ff3366;
+  --btn-danger-active: #cc0033;
+  --btn-danger-glow: 0 0 6px var(--tertiary);
+
+  /* -------------------------
+     MODAL COLORS
+  ------------------------- */
+  --modal-overlay: rgba(0, 0, 0, 0.8);
+  --modal-bg: #1a1a1a;
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--btn-primary-hover);
+  --modal-btn-primary-text: #000000;
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: var(--tertiary);
+  --modal-btn-danger-hover: #ffffff;
+  --modal-btn-danger-text: #000000;
+}
+
+/* =========================
+   PASTEL BLOOM THEME  
+========================= */
+:root[data-theme="pastel-bloom"] {
+  /* -------------------------
+     BACKGROUNDS
+  ------------------------- */
+  --bg: #f2e6f5; /* rosa/lilás pastel mais escuro */
+  --bg-primary: #e6d4f0; /* containers / cards */
+  --surface: #d8c2e8; /* listas / cards secundários */
+  --surface-muted: #cbb7e0; /* hover leve */
+
+  /* Navlink active bg */
+  --navlink-bg-active: rgba(255, 182, 193, 0.3); /* rosa suave translúcido */
+
+  /* -------------------------
+     BRAND / ACCENT COLORS
+  ------------------------- */
+  --primary: #ffb6c1; /* rosa pastel */
+  --primary-hover: #ff9fc1; /* rosa mais intenso */
+  --secondary: #c8a2ff; /* lilás suave para editar */
+  --tertiary: #87cefa; /* azul bebê para destaques */
+
+  /* -------------------------
+     TEXT COLORS
+  ------------------------- */
+  --text-primary: #4a4a4a; /* cinza escuro para leitura */
+  --text-muted: #7a7a7a; /* texto secundário */
+  --text-disabled: #555555; /* texto desabilitado */
+
+  /* -------------------------
+     HOVER / FEEDBACK COLORS
+  ------------------------- */
+  --hover-bg: rgba(255, 182, 193, 0.15); /* hover rosa leve */
+  --hover-bg-strong: rgba(200, 162, 255, 0.2); /* hover lilás leve */
+
+  /* -------------------------
+     STATE COLORS
+  ------------------------- */
+  --success: #77dd77; /* verde menta suave */
+  --danger: #ff6f91; /* vermelho suave */
+  --warning: #ffd27f; /* amarelo pastel */
+
+  /* -------------------------
+     BORDERS
+  ------------------------- */
+  --border: rgba(200, 162, 255, 0.5); /* lilás leve */
+
+  /* -------------------------
+     INPUTS
+  ------------------------- */
+  --bg-input: #e6d4f0; /* container suave */
+  --input-border: rgba(200, 162, 255, 0.5);
+  --input-focus: var(--primary);
+  --modal-input-bg: #e6d4f0;
+  --input-glow: 0 0 6px var(--primary);
+
+  /* -------------------------
+     UI / RADIUS
+  ------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* -------------------------
+     ICON COLORS
+  ------------------------- */
+  --icon-default: #4a4a4a;
+  --icon-hover: var(--primary);
+  --icon-edit: var(--secondary);
+  --icon-danger: #ff6f91;
+  --icon-glow: 0 0 4px var(--primary);
+
+  /* -------------------------
+     BUTTON STATES
+  ------------------------- */
+  --btn-primary-hover: #ff9fc1;
+  --btn-primary-active: #ffb6c1;
+  --btn-primary-glow: 0 0 8px var(--primary);
+
+  --btn-secondary-hover: #c8a2ff;
+  --btn-secondary-active: #b288ff;
+  --btn-secondary-glow: 0 0 6px var(--secondary);
+
+  --btn-danger-hover: #ff6f91;
+  --btn-danger-active: #ff4c70;
+  --btn-danger-glow: 0 0 6px var(--tertiary);
+
+  /* -------------------------
+     MODAL COLORS
+  ------------------------- */
+  --modal-overlay: rgba(255, 255, 255, 0.7);
+  --modal-bg: #e6d4f0;
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--btn-primary-hover);
+  --modal-btn-primary-text: #ffffff;
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: var(--btn-danger-active);
+  --modal-btn-danger-hover: var(--btn-danger-hover);
+  --modal-btn-danger-text: #ffffff;
+}
+
+/* -------------------------
+   BODY BASE
+------------------------- */
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------------
+   BORDAS
+------------------------- */
+.border-theme {
+  border-color: var(--border);
+}
+
+.bg-input {
+  background: var(--bg-input);
+}
+
+/* -------------------------
+   ICONS
+------------------------- */
+.icon {
+  color: var(--icon-default);
+  transition: color 0.2s ease;
+}
+
+.icon-hover:hover {
+  color: var(--icon-hover);
+}
+
+.icon-edit:hover {
+  color: var(--icon-edit);
+}
+
+.icon-danger:hover {
+  color: var(--icon-danger);
+}
+
+/* -------------------------
+   HOVER
+------------------------- */
+.hover-bg:hover {
+  background: var(--hover-bg);
+}
+
+.hover-bg-strong:hover {
+  background: var(--hover-bg-strong);
+}
+
+/* -------------------------
+   BUTTONS
+------------------------- */
+button {
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  transition: color 0.2s, background 0.2s;
+  cursor: pointer;
+}
+
+/* PRIMARY BUTTON (Repeat) */
+button.btn-primary {
+  color: var(--text-muted);
+}
+button.btn-primary.active {
+  color: var(--btn-primary-active);
+}
+button.btn-primary:hover:not(:disabled) {
+  color: var(--btn-primary-hover);
+}
+button.btn-primary:active:not(:disabled) {
+  color: var(--btn-primary-active);
+}
+
+/* SECONDARY BUTTON (ex: play, prev, next) */
+button.btn-secondary {
+  color: var(--text-primary);
+}
+button.btn-secondary:hover:not(:disabled) {
+  color: var(--btn-secondary-hover);
+}
+button.btn-secondary:active:not(:disabled) {
+  color: var(--btn-secondary-active);
+}
+button.btn-secondary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* DANGER BUTTON */
+button.btn-danger {
+  color: var(--text-primary);
+}
+button.btn-danger:hover:not(:disabled) {
+  color: var(--btn-danger-hover);
+}
+button.btn-danger:active:not(:disabled) {
+  color: var(--btn-danger-active);
+}
+button.btn-danger:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Base */
+.action-btn {
+  color: var(--text-primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+/* Hover base — SOMENTE se estiver habilitado */
+.action-btn:not(:disabled):hover {
+  background: var(--hover-bg);
+}
+
+/* --------------------------------------
+   Criar Lista (azul escuro)
+-------------------------------------- */
+.action-btn-primary:not(:disabled):hover {
+  color: var(--btn-primary-active);
+}
+
+/* --------------------------------------
+   Finalizar Lista (azul claro)
+-------------------------------------- */
+.action-btn-success:not(:disabled):hover {
+  color: var(--primary);
+}
+
+/* --------------------------------------
+   Cancelar
+-------------------------------------- */
+.action-btn-danger:not(:disabled):hover {
+  color: var(--danger);
+}
+
+/* --------------------------------------
+   Toggle / Mostrar lista
+-------------------------------------- */
+.action-btn-toggle:not(:disabled):hover {
+  color: var(--btn-primary-active);
+}
+
+.action-btn-toggle.active {
+  background: var(--hover-bg-strong);
+  color: var(--btn-primary-active);
+}
+
+/* --------------------------------------
+   Disabled
+-------------------------------------- */
+.action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* -------------------------
+   MODAL
+------------------------- */
+.modal-overlay {
+  background: var(--modal-overlay);
+}
+
+.modal {
+  background: var(--modal-bg);
+  border: 1px solid var(--modal-border);
+  border-radius: var(--radius-md);
+  color: var(--modal-text);
+}
+
+.modal-title {
+  color: var(--modal-title);
+  font-weight: 600;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--modal-input-bg);
+  border: 1px solid var(--modal-input-border);
+  color: var(--text-primary);
+  outline: none;
+}
+
+.modal-input:focus {
+  border-color: var(--modal-input-focus);
+}
+
+.modal-btn-primary {
+  background: var(--modal-btn-primary-bg);
+  color: var(--modal-btn-primary-text);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.9rem;
+}
+
+.modal-btn-primary:hover {
+  background: var(--modal-btn-primary-hover);
+}
+
+.modal-btn-secondary {
+  color: var(--modal-btn-secondary-text);
+}
+
+.modal-btn-secondary:hover {
+  color: var(--modal-btn-secondary-hover);
+}
+
+.modal-btn-danger {
+  background: var(--modal-btn-danger-bg);
+  color: var(--modal-btn-danger-text);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.modal-btn-danger:hover {
+  background: var(--modal-btn-danger-hover);
+}
+
+.modal-select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--modal-input-bg);
+  border: 1px solid var(--modal-input-border);
+  color: var(--text-primary);
+  outline: none;
+  cursor: pointer;
+}
+
+.modal-select:focus {
+  border-color: var(--modal-input-focus);
+}
+
+.modal-select option {
+  background: var(--modal-bg);
+  color: var(--text-primary);
+}
+
+/* -------------------------
+   SCROLLBAR CUSTOM
+------------------------- */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-muted);
+  border-radius: var(--radius-md);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-disabled);
+  border-radius: var(--radius-md);
+  transition: background 0.2s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* -------------------------
+   UTILITÁRIOS
+------------------------- */
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+.text-muted {
+  color: var(--text-muted);
+}
+.text-disabled {
+  color: var(--text-disabled);
+}
+
+.bg-primary {
+  background: var(--primary);
+}
+.bg-secondary {
+  background: var(--secondary);
+}
+.bg-surface {
+  background: var(--surface);
+}
+.bg-surface-muted {
+  background: var(--surface-muted);
+}
+
+/* -------------------------
+   STATES
+------------------------- */
+.text-success {
+  color: var(--success);
+}
+.text-danger {
+  color: var(--danger);
+}
+.text-warning {
+  color: var(--warning);
+}
+
+/* -------------------------
+   ANIMATIONS
+------------------------- */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite; /* você pode ajustar a duração */
+}

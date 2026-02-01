@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// ===== MODELOS =====
+
+// Cada gênero musical
+model Genre {
+  id      Int      @id @default(autoincrement())
+  name    String   @unique
+  artists Artist[]
+}
+
+// Artista ou banda
+model Artist {
+  id      Int     @id @default(autoincrement())
+  name    String
+  genre   Genre?  @relation(fields: [genreId], references: [id], onDelete: SetNull)
+  genreId Int?
+  albums  Album[]
+}
+
+// Álbum de um artista
+model Album {
+  id       Int     @id @default(autoincrement())
+  title    String
+  year     Int?
+  artist   Artist? @relation(fields: [artistId], references: [id], onDelete: SetNull)
+  artistId Int?
+  tracks   Track[]
+}
+
+// Faixa/música de um álbum
+model Track {
+  id          Int    @id @default(autoincrement())
+  title       String
+  duration    Int? // duração em segundos
+  filePath    String // caminho do arquivo local
+  album       Album? @relation(fields: [albumId], references: [id], onDelete: SetNull)
+  albumId     Int?
+  trackNumber Int // para reprodução na ordem correta
+}

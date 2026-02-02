@@ -9,16 +9,30 @@ import { ArtistService } from "./ArtistService";
 import { TrackService } from "./TrackService";
 import { AlbumService } from "./AlbumService";
 
-ffmpeg.setFfprobePath(ffmpegStatic!);
+// 1. Detectar se o app está empacotado
+const isDev = !app.isPackaged;
+
+/**
+ * Ajuste para o ffmpeg-static.
+ * Em produção, o binário é extraído para a pasta 'app.asar.unpacked'
+ * devido à configuração 'asarUnpack' que colocamos no package.json.
+ */
+const ffmpegPath = isDev
+  ? ffmpegStatic
+  : ffmpegStatic?.replace("app.asar", "app.asar.unpacked");
+
+ffmpeg.setFfprobePath(ffmpegPath!);
+ffmpeg.setFfmpegPath(ffmpegPath!);
 
 export class DownloadService {
   constructor(
     private readonly genresService: GenresService,
     private readonly artistsService: ArtistService,
     private readonly albumsService: AlbumService,
-    private readonly tracksService: TrackService
+    private readonly tracksService: TrackService,
   ) {}
 
+  // Pasta de downloads sempre no AppData do usuário para evitar erros de permissão
   private downloadsDir = path.join(app.getPath("userData"), "downloads");
 
   async downloadYoutubeAudio(
@@ -29,7 +43,7 @@ export class DownloadService {
       albumTitle: string;
       trackNumber: number;
       year?: number;
-    }
+    },
   ) {
     const { genreName, artistName, albumTitle, trackNumber, year } = meta;
 
@@ -55,47 +69,65 @@ export class DownloadService {
     const timestamp = Date.now();
     const outputTemplate = path.join(
       this.downloadsDir,
-      `${trackNumber}-${timestamp}-%(title)s.%(ext)s`
+      `${trackNumber}-${timestamp}-%(title)s.%(ext)s`,
     );
 
-    const ytDlpPath = path.join(
-      app.getAppPath(),
-      "resources",
-      "yt-dlp",
-      "yt-dlp.exe"
-    );
+    /**
+     * LOCALIZAÇÃO DO YT-DLP:
+     * Em Dev: pasta raiz/resources/yt-dlp/
+     * Em Produção: pasta de instalação/resources/resources/yt-dlp/ (via extraResources)
+     */
+    const ytDlpPath = isDev
+      ? path.join(app.getAppPath(), "resources", "yt-dlp", "yt-dlp.exe")
+      : path.join(process.resourcesPath, "resources", "yt-dlp", "yt-dlp.exe");
 
     await new Promise<void>((resolve, reject) => {
-      const process = spawn(ytDlpPath, [
+      const processSpawn = spawn(ytDlpPath, [
         "-f",
         "bestaudio",
         "-o",
         outputTemplate,
         url,
       ]);
-      process.stdout.on("data", (data) => console.log(`[yt-dlp] ${data}`));
-      process.stderr.on("data", (data) => console.error(`[yt-dlp] ${data}`));
-      process.on("close", (code) =>
-        code === 0 ? resolve() : reject(new Error("Erro ao baixar áudio"))
+
+      processSpawn.stdout.on("data", (data) => console.log(`[yt-dlp] ${data}`));
+      processSpawn.stderr.on("data", (data) =>
+        console.error(`[yt-dlp] ${data}`),
       );
+
+      processSpawn.on("close", (code) =>
+        code === 0
+          ? resolve()
+          : reject(new Error(`Erro ao baixar áudio (Código ${code})`)),
+      );
+
+      processSpawn.on("error", (err) => {
+        console.error("Falha ao iniciar yt-dlp:", err);
+        reject(err);
+      });
     });
 
     // 5️⃣ Pegar arquivo baixado mais recente
     const files = fs
       .readdirSync(this.downloadsDir)
-      .filter((f) => f.endsWith(".webm") || f.endsWith(".mp3"))
+      .filter(
+        (f) => f.endsWith(".webm") || f.endsWith(".mp3") || f.endsWith(".m4a"),
+      )
       .map((f) => ({
         name: f,
         time: fs.statSync(path.join(this.downloadsDir, f)).mtimeMs,
       }))
       .sort((a, b) => b.time - a.time);
 
+    if (files.length === 0)
+      throw new Error("Arquivo baixado não encontrado na pasta.");
+
     const downloadedFilePath = path.join(this.downloadsDir, files[0].name);
 
     // 6️⃣ Limpar título do arquivo para salvar no banco
     let trackTitle = path.basename(
       downloadedFilePath,
-      path.extname(downloadedFilePath)
+      path.extname(downloadedFilePath),
     );
     // remove prefixo "numero-timestamp-"
     trackTitle = trackTitle.replace(/^\d+-\d+-/, "");
@@ -118,7 +150,7 @@ export class DownloadService {
       album.id,
       downloadedFilePath,
       trackNumber,
-      duration
+      duration,
     );
 
     return track;

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { AppRoutes } from "./app/routes/AppRoutes";
 import { PlayerProvider } from "./contexts/PlayerContext";
 import { DialogProvider } from "./contexts/DialogContext";
@@ -9,7 +9,7 @@ import "./global.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <DialogProvider>
         <DownloadsProvider>
           <PlayerProvider>
@@ -17,6 +17,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           </PlayerProvider>
         </DownloadsProvider>
       </DialogProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+    </HashRouter>
+  </React.StrictMode>,
 );

@@ -4,8 +4,43 @@
   "description": "NeonWave - Personal music downloader and player",
   "main": "dist/electron/main.js",
   "scripts": {
-    "build": "tsc",
-    "electron:dev": "npm run build && electron ."
+    "dev:render": "cd render && npm run dev",
+    "dev:electron": "npm run build:electron && electron .",
+    "dev": "concurrently \"npm run dev:render\" \"npm run dev:electron\"",
+    "build:electron": "tsc",
+    "build:render": "cd render && npm run build",
+    "build:all": "npm run build:render && npm run build:electron",
+    "dist": "npm run build:all && electron-builder"
+  },
+  "build": {
+    "appId": "com.neonwave.music",
+    "productName": "NeonWave",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "!render/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "resources",
+        "to": "resources",
+        "filter": [
+          "**/*"
+        ]
+      },
+      "prisma/dev.db"
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "**/*.node",
+      "**/resources/yt-dlp/*"
+    ],
+    "win": {
+      "target": "portable"
+    }
   },
   "keywords": [],
   "author": "Emerson Carneiro da Silva",
@@ -13,7 +48,9 @@
   "type": "commonjs",
   "devDependencies": {
     "@types/fluent-ffmpeg": "^2.1.28",
+    "concurrently": "^9.2.1",
     "electron": "^39.2.7",
+    "electron-builder": "^26.7.0",
     "electron-rebuild": "^3.2.9",
     "prisma": "^7.2.0",
     "ts-node": "^10.9.2",

@@ -11,6 +11,7 @@ import { NeonGlow } from "../ui/Effects/CyberpunkCIty/NeonGlow";
 import { CityTraffic } from "../ui/Effects/CyberpunkCIty/CityTraffic";
 import { StreetLights } from "../ui/Effects/CyberpunkCIty/StreetLights";
 import { SkyTrain } from "../ui/Effects/CyberpunkCIty/SkyTrain";
+import cyberpunkCityImg from "../../assets/images/cyberpunk-city-bg.png";
 
 export function CiberpunkCity() {
   const [isRaining, setIsRaining] = useState(false);
@@ -65,7 +66,7 @@ export function CiberpunkCity() {
     <div className="relative h-screen w-full overflow-hidden bg-black">
       {/* 1. IMAGEM DE FUNDO */}
       <img
-        src="/src/assets/images/cyberpunk_city_bg.png"
+        src={cyberpunkCityImg}
         alt="Cyberpunk City"
         className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-3000 ${
           isRaining

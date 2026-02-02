@@ -11,12 +11,14 @@ import { TracksPage } from "../pages/TracksPage";
 import { DownloadPage } from "../pages/DownloadPage";
 import { NowPlayingPage } from "../pages/NowPlayingPage";
 import { ThemesPage } from "../pages/ThemesPage";
+import SplashScreen from "../pages/SplashScreen";
 
 export function AppRoutes() {
   return (
     <Routes>
       <Route element={<AppLayout />}>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<SplashScreen />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/genres" element={<GenresPage />} />
         <Route path="/genres/:id" element={<GenreArtistsPage />} />
         <Route path="/artists" element={<ArtistsPage />} />

@@ -6,7 +6,7 @@ export function Sidebar() {
     <aside className="w-56 border-r border-theme p-4 text-sm">
       <nav className="flex flex-col gap-4">
         {/* Home */}
-        <Item to="/" label="Início" />
+        <Item to="/home" label="Início" />
 
         {/* Library */}
         <Section title="Biblioteca">

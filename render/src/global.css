@@ -1248,7 +1248,7 @@
 /* =========================
    THUNDERSTORM STRIKE THEME 
 ========================= */
-:root[data-theme="thunderstorm-strike"] {
+:root[data-theme="thunderstorm"] {
   /* -------------------------
      BACKGROUNDS
   ------------------------- */
@@ -1358,7 +1358,7 @@
 /* =========================
    PASTEL BLOOM THEME  
 ========================= */
-:root[data-theme="pastel-bloom"] {
+:root[data-theme="pastel"] {
   /* -------------------------
      BACKGROUNDS
   ------------------------- */
@@ -1525,7 +1525,9 @@ button {
   font-weight: 500;
   border: none;
   background: transparent;
-  transition: color 0.2s, background 0.2s;
+  transition:
+    color 0.2s,
+    background 0.2s;
   cursor: pointer;
 }
 
@@ -1578,7 +1580,9 @@ button.btn-danger:disabled {
   color: var(--text-primary);
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius-sm);
-  transition: color 0.2s ease, background 0.2s ease;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
 }
 
 /* Hover base — SOMENTE se estiver habilitado */

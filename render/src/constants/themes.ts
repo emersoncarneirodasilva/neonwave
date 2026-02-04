@@ -28,9 +28,9 @@ export const THEMES = [
   { id: "urban", name: "Urban Pulse", icon: Building2 },
   { id: "autumn", name: "Autumn Leaves", icon: Leaf },
   { id: "winter", name: "Winter Chill", icon: Snowflake },
-  { id: "pastel-bloom", name: "Pastel Bloom", icon: Palette },
+  { id: "pastel", name: "Pastel Bloom", icon: Palette },
   {
-    id: "thunderstorm-strike",
+    id: "thunderstorm",
     name: "Thunderstorm Strike",
     icon: CloudLightning,
   },

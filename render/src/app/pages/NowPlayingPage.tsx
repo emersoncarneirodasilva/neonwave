@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { CiberpunkCity } from "../../components/NowPlaying/CiberpunkCity";
+import { CyberpunkCity } from "../../components/NowPlaying/CyberpunkCity";
 import { SummerBreeze } from "../../components/NowPlaying/SummerBreeze";
 import { WinterChill } from "../../components/NowPlaying/WinterChill";
 import { ForestEcho } from "../../components/NowPlaying/ForestEcho";
@@ -9,9 +9,9 @@ import { PastelBloom } from "../../components/NowPlaying/PastelBloom";
 
 // 1. Mapeamento de Temas -> Cenários
 const SCENARIO_MAP: Record<string, React.ComponentType> = {
-  synthwave: CiberpunkCity,
-  neonpunk: CiberpunkCity,
-  urban: CiberpunkCity,
+  synthwave: CyberpunkCity,
+  neonpunk: CyberpunkCity,
+  urban: CyberpunkCity,
   summer: SummerBreeze,
   winter: WinterChill,
   forest: ForestEcho,

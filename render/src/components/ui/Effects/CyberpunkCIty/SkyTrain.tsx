@@ -1,10 +1,14 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { useWindowSize } from "../../../../hooks/useWindowSize";
 import train from "../../../../assets/images/train.png";
 import greenTrain from "../../../../assets/images/green-train.png";
 import purpleTrain from "../../../../assets/images/purple-train.png";
 
-export const SkyTrain: React.FC = () => {
+interface SkyTrainProps {
+  isNight: boolean;
+}
+
+export const SkyTrain = ({ isNight }: SkyTrainProps) => {
   const { width } = useWindowSize();
 
   // CONFIGURAÇÃO DE TEMPO (3 trens de 30s cada = 90s total)
@@ -60,7 +64,7 @@ export const SkyTrain: React.FC = () => {
           transform: `scale(${isSmall ? config.distScale : -1}, ${
             isSmall ? config.distScale : -1
           }) rotate(${config.imgRotate}) translateY(${config.vOffset})`,
-          filter: `brightness(0.6) contrast(1.2) drop-shadow(0 0 10px rgba(34, 211, 238, 0.3))`,
+          filter: `${isNight ? "brightness(0.6)" : "brightness(1)"} contrast(1.2) drop-shadow(0 0 10px rgba(34, 211, 238, 0.3))`,
         }}
         alt="Sky Train"
       />

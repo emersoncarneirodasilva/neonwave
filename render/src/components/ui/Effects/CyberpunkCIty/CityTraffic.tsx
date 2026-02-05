@@ -152,7 +152,7 @@ export const CityTraffic: React.FC = () => {
           : { bottom: "0%", left: "36%" }, // Pequeno (Comentado)
       },
     ],
-    [isLarge]
+    [isLarge],
   );
 
   return (

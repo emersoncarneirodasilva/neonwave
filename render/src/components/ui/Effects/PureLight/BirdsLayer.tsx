@@ -2,13 +2,17 @@ import React, { useState, useCallback } from "react";
 
 interface BirdsLayerProps {
   hour: number;
+  isRaining: boolean;
 }
 
-export const BirdsLayer: React.FC<BirdsLayerProps> = ({ hour }) => {
+export const BirdsLayer: React.FC<BirdsLayerProps> = ({
+  hour,
+  isRaining = false,
+}) => {
   const isNight = hour >= 19 || hour < 5.5;
   const isSunset = hour >= 17 && hour < 19;
 
-  // Cor: No pôr do sol fica escuro contra a luz, de dia branco, à noite some.
+  // Cor dos pássaros
   const birdColor = isSunset
     ? "#2d1b10"
     : isNight
@@ -22,8 +26,9 @@ export const BirdsLayer: React.FC<BirdsLayerProps> = ({ hour }) => {
       direction: goesRight ? "ltr" : "rtl",
       startX: goesRight ? "-30vw" : "130vw",
       endX: goesRight ? "130vw" : "-30vw",
-      top: `${15 + Math.random() * 40}%`, // Altura variada no céu
-      speed: 40 + Math.random() * 20, // Movimento calmo
+      top: 15 + Math.random() * 40,
+      driftY: (Math.random() - 0.5) * 100, // Variação de até 50px para cima ou baixo
+      speed: 40 + Math.random() * 20,
     };
   }, []);
 
@@ -33,19 +38,24 @@ export const BirdsLayer: React.FC<BirdsLayerProps> = ({ hour }) => {
     setRoute(generateFlock());
   };
 
-  // Se for noite total, não renderiza nada para poupar processamento
-  if (isNight) return null;
+  const shouldHide = isNight || isRaining;
 
   const formation = [
-    { x: 0, y: 0 }, // Líder
-    { x: -20, y: -15 }, // Asa esquerda 1
-    { x: -40, y: -30 }, // Asa esquerda 2
-    { x: -20, y: 15 }, // Asa direita 1
-    { x: -40, y: 30 }, // Asa direita 2
+    { x: 0, y: 0 },
+    { x: -20, y: -15 },
+    { x: -40, y: -30 },
+    { x: -20, y: 15 },
+    { x: -40, y: 30 },
   ];
 
   return (
-    <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 2 }}>
+    <div
+      className="absolute inset-0 pointer-events-none transition-opacity duration-3000"
+      style={{
+        zIndex: 2,
+        opacity: shouldHide ? 0 : 1,
+      }}
+    >
       <style>{`
         @keyframes fly-across-${route.id} {
           from { 
@@ -54,7 +64,7 @@ export const BirdsLayer: React.FC<BirdsLayerProps> = ({ hour }) => {
           }
           to { 
             left: ${route.endX}; 
-            transform: translateY(${Math.random() > 0.5 ? "-50px" : "50px"});
+            transform: translateY(${route.driftY}px);
           }
         }
         @keyframes flap {
@@ -63,9 +73,10 @@ export const BirdsLayer: React.FC<BirdsLayerProps> = ({ hour }) => {
         }
         .v-formation {
           position: absolute;
-          top: ${route.top};
+          top: ${route.top}%;
+          /* Usamos a rota travada até o onAnimationEnd disparar */
           animation: fly-across-${route.id} ${route.speed}s linear forwards;
-          will-change: left;
+          will-change: left, transform;
         }
         .bird-pixel {
           position: absolute;

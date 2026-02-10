@@ -56,7 +56,7 @@ export function PastelBloom() {
   }, [isRaining]); // Re-executa sempre que o estado muda
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black">
+    <div className="relative h-screen w-full overflow-hidden bg-transparent">
       <motion.div
         className="relative h-full w-full"
         animate={{

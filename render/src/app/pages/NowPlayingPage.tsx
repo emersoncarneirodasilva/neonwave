@@ -6,6 +6,7 @@ import { ForestEcho } from "../../components/NowPlaying/ForestEcho";
 import { OceanAbyss } from "../../components/NowPlaying/OceanAbyss";
 import { AutumnLeaves } from "../../components/NowPlaying/AutumnLeaves";
 import { PastelBloom } from "../../components/NowPlaying/PastelBloom";
+import { PureLight } from "../../components/NowPlaying/PureLight";
 
 // 1. Mapeamento de Temas -> Cenários
 const SCENARIO_MAP: Record<string, React.ComponentType> = {
@@ -18,6 +19,7 @@ const SCENARIO_MAP: Record<string, React.ComponentType> = {
   oceanic: OceanAbyss,
   autumn: AutumnLeaves,
   pastel: PastelBloom,
+  light: PureLight,
 };
 
 export function NowPlayingPage() {

@@ -46,7 +46,7 @@ export function PureLight() {
   }, []);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-white">
+    <div className="relative h-screen w-full overflow-hidden bg-transparent">
       <SkyCycle hour={hour} isRaining={isRaining} />
       <RainLayer isRaining={isRaining} hour={hour} />
       <BirdsLayer hour={hour} isRaining={isRaining} />

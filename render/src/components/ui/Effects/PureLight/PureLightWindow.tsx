@@ -14,7 +14,7 @@ const landscapeImages = [
 
 interface PureLightWindowProps {
   hour: number;
-  isRaining: boolean; // Adicionamos a prop de chuva
+  isRaining: boolean;
 }
 
 export const PureLightWindow = ({ hour, isRaining }: PureLightWindowProps) => {
@@ -29,13 +29,11 @@ export const PureLightWindow = ({ hour, isRaining }: PureLightWindowProps) => {
     <div
       className="absolute overflow-hidden pointer-events-none transition-all duration-4000"
       style={{
-        top: isLarge ? "12%" : "15.3%",
+        top: isLarge ? "13%" : "15.3%",
         left: "38.7%",
         width: "68%",
         height: isLarge ? "61%" : "51%",
         zIndex: 0,
-        // Aplica o embaçamento na cidade inteira quando chove
-        // Um valor entre 2px e 4px costuma ser o ideal para não "sumir" com a arte
         filter: isRaining ? "blur(3px) brightness(0.8)" : "none",
       }}
     >

@@ -7,6 +7,7 @@ import { OceanAbyss } from "../../components/NowPlaying/OceanAbyss";
 import { AutumnLeaves } from "../../components/NowPlaying/AutumnLeaves";
 import { PastelBloom } from "../../components/NowPlaying/PastelBloom";
 import { PureLight } from "../../components/NowPlaying/PureLight";
+import { DeepTechno } from "../../components/NowPlaying/DeepTechno";
 
 // 1. Mapeamento de Temas -> Cenários
 const SCENARIO_MAP: Record<string, React.ComponentType> = {
@@ -20,6 +21,9 @@ const SCENARIO_MAP: Record<string, React.ComponentType> = {
   autumn: AutumnLeaves,
   pastel: PastelBloom,
   light: PureLight,
+  dark: DeepTechno,
+  verydark: DeepTechno,
+  thunderstorm: DeepTechno,
 };
 
 export function NowPlayingPage() {

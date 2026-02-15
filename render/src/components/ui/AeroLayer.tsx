@@ -1,10 +1,10 @@
 import React, { useState, useCallback, useRef } from "react";
 
-import whiteAirplaneImg from "../../../../assets/images/white-airplane.png";
-import whiteAirplane02Img from "../../../../assets/images/white-airplane-02.png";
-import grayAirplane02Img from "../../../../assets/images/gray-airplane.png";
-import helicopterImg from "../../../../assets/images/helicopter.png";
-import alienShipImg from "../../../../assets/images/alien-ship.png";
+import whiteAirplaneImg from "../../assets/images/white-airplane.png";
+import whiteAirplane02Img from "../../assets/images/white-airplane-02.png";
+import grayAirplane02Img from "../../assets/images/gray-airplane.png";
+import helicopterImg from "../../assets/images/helicopter.png";
+import alienShipImg from "../../assets/images/alien-ship.png";
 
 interface AeroLayerProps {
   hour: number;

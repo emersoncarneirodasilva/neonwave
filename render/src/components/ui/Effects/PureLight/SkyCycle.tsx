@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { useWindowSize } from "../../../../hooks/useWindowSize";
-import { AeroLayer } from "./AeroLayer";
+import { AeroLayer } from "../../AeroLayer";
 import { ShootingStarLayer } from "./ShootingStarLayer";
 
 const lerpColor = (a: string, b: string, amount: number) => {

@@ -1,4 +1,4 @@
-# 🌊 NeonWave
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/47acc24e-e616-4695-921d-1d72739e4dbe" /><img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/47acc24e-e616-4695-921d-1d72739e4dbe" /><img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/47acc24e-e616-4695-921d-1d72739e4dbe" /># 🌊 NeonWave
 
 <img width="1228" height="856" alt="image" src="https://github.com/user-attachments/assets/547bc6a5-464f-4b83-bf29-dcc56f37039d" />  
 
@@ -144,7 +144,7 @@ Este projeto está sob a licença [MIT](https://www.google.com/search?q=LICENSE)
 
 ---
 
-## 🎨 Now Playing
+## ▶️ Now Playing
 
 **Temas Dark, Very Dark, Thunderstorm Strike**
 
@@ -164,7 +164,7 @@ Este projeto está sob a licença [MIT](https://www.google.com/search?q=LICENSE)
 
 ---
 
-**Tema Steel Wave:**
+**Tema Steel Wave**
 
 <img width="1232" height="858" alt="image" src="https://github.com/user-attachments/assets/420ba0c6-705f-4fa9-9276-b9e15c4093bd" />
 

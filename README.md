@@ -1,11 +1,3 @@
-Ficou ótimo! Com base nas imagens da sua estrutura de pastas real, fiz os ajustes finos na seção de **Arquitetura** para que o README reflita exatamente o que está no seu VS Code.
-
-Também aproveitei para incluir os nomes dos temas que você definiu (Cyberpunk City, Ocean Abyss, Summer Breeze) e detalhei melhor a organização do `backend` dentro da pasta `electron`.
-
-Aqui está a versão final e atualizada:
-
----
-
 # 🌊 NeonWave
 
 **NeonWave** é um ecossistema musical desktop completo para download e reprodução de áudio. Desenvolvido com **Electron**, **React 19** e **TypeScript**, ele une a liberdade do armazenamento local com uma interface futurista, fluida e altamente personalizável.

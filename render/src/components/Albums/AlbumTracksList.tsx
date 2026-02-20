@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { TrackItem } from "../Tracks/TrackItem";
 import { usePlayer } from "../../contexts/PlayerContext";
 import { PlaylistModal } from "../Tracks/PlaylistModal";
@@ -8,17 +8,12 @@ interface Props {
   albumId: number;
   tracks: Track[];
   updateTrack(
-    data: Partial<Track> & { id: number; albumId?: number | null }
+    data: Partial<Track> & { id: number; albumId?: number | null },
   ): Promise<void>;
   deleteTrack(id: number): Promise<void>;
 }
 
-export function AlbumTracksList({
-  albumId,
-  tracks,
-  updateTrack,
-  deleteTrack,
-}: Props) {
+export function AlbumTracksList({ tracks, updateTrack, deleteTrack }: Props) {
   const {
     mode,
     startSelection,
@@ -28,30 +23,6 @@ export function AlbumTracksList({
   } = usePlayer();
 
   const [showPlaylist, setShowPlaylist] = useState(false);
-  const [localTracks, setLocalTracks] = useState<Track[]>(tracks);
-
-  useEffect(() => {
-    setLocalTracks(tracks);
-  }, [tracks]);
-
-  async function handleUpdate(
-    data: Partial<Track> & { id: number; albumId?: number | null }
-  ) {
-    await updateTrack(data);
-
-    setLocalTracks((prev) => {
-      if (data.albumId !== undefined && data.albumId !== albumId) {
-        return prev.filter((t) => t.id !== data.id);
-      }
-
-      return prev.map((t) => (t.id === data.id ? { ...t, ...data } : t));
-    });
-  }
-
-  async function handleDelete(id: number) {
-    await deleteTrack(id);
-    setLocalTracks((prev) => prev.filter((t) => t.id !== id));
-  }
 
   return (
     <>
@@ -94,13 +65,13 @@ export function AlbumTracksList({
       </div>
 
       <ul className="space-y-2">
-        {localTracks.map((track, index) => (
+        {tracks.map((track, index) => (
           <TrackItem
             key={track.id}
             track={track}
             index={index}
-            onDelete={handleDelete}
-            onUpdate={handleUpdate}
+            onDelete={deleteTrack}
+            onUpdate={updateTrack}
           />
         ))}
       </ul>

@@ -1,6 +1,6 @@
 {
   "name": "neonwave",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "NeonWave - Personal music downloader and player",
   "main": "dist/electron/main.js",
   "scripts": {

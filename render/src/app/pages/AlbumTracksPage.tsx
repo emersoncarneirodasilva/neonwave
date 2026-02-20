@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { PageContainer } from "../../components/ui/PageContainer";
 import { PageHeader } from "../../components/ui/PageHeader";
@@ -39,24 +39,47 @@ export function AlbumTracksPage() {
 
     async function fetchData() {
       setLoading(true);
+      try {
+        const trackData = await listTracksByAlbum(albumId ?? 0);
+        setTracks(trackData);
 
-      const trackData = await listTracksByAlbum(albumId ?? 0);
-      setTracks(trackData);
-
-      const albumData = await getAlbumById(albumId ?? 0);
-      if (albumData) {
-        const artist = artists.find((a) => a.id === albumData.artistId);
-        setAlbum({
-          ...albumData,
-          artistName: artist?.name,
-        });
+        const albumData = await getAlbumById(albumId ?? 0);
+        if (albumData) {
+          const artist = artists.find((a) => a.id === albumData.artistId);
+          setAlbum({
+            ...albumData,
+            artistName: artist?.name,
+          });
+        }
+      } catch (err) {
+        console.error("Erro ao carregar dados do álbum:", err);
+      } finally {
+        setLoading(false);
       }
-
-      setLoading(false);
     }
 
     fetchData();
   }, [albumId, listTracksByAlbum, getAlbumById, artists]);
+
+  // Função memorizada para atualizar o nome/dados da música na lista
+  const handleUpdateTrack = useCallback(
+    async (data: Partial<Track> & { id: number }) => {
+      await updateTrack(data);
+      setTracks((prev) =>
+        prev.map((t) => (t.id === data.id ? { ...t, ...data } : t)),
+      );
+    },
+    [updateTrack],
+  );
+
+  // Função memorizada para remover a música da lista
+  const handleDeleteTrack = useCallback(
+    async (id: number) => {
+      await deleteTrack(id);
+      setTracks((prev) => prev.filter((t) => t.id !== id));
+    },
+    [deleteTrack],
+  );
 
   if (!albumId) {
     return (
@@ -70,7 +93,7 @@ export function AlbumTracksPage() {
   }
 
   const filteredTracks = tracks.filter((t) =>
-    t.title.toLowerCase().includes(query.toLowerCase())
+    t.title.toLowerCase().includes(query.toLowerCase()),
   );
 
   return (
@@ -99,7 +122,7 @@ export function AlbumTracksPage() {
           description={
             query
               ? "Nenhuma música corresponde à sua busca"
-              : "Este álbum ainda não possui músicas cadastradas"
+              : "Este álbum ainda não possui músicas"
           }
         />
       )}
@@ -108,8 +131,8 @@ export function AlbumTracksPage() {
         <AlbumTracksList
           albumId={albumId}
           tracks={filteredTracks}
-          updateTrack={updateTrack}
-          deleteTrack={deleteTrack}
+          updateTrack={handleUpdateTrack}
+          deleteTrack={handleDeleteTrack}
         />
       )}
     </PageContainer>

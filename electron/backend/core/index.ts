@@ -1,7 +1,7 @@
 export function getAppInfo() {
   return {
     name: "NeonWave",
-    version: "0.1.0",
+    version: "1.0.0",
     status: "running",
   };
 }

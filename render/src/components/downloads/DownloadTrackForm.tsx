@@ -111,109 +111,138 @@ export function DownloadTrackForm() {
   }
 
   return (
-    <div className="bg-surface rounded-lg p-6 max-w-3xl space-y-5">
+    <div className="bg-surface rounded-lg p-4 md:p-6 w-full max-w-3xl 2xl:max-w-7xl mx-auto space-y-5 transition-all duration-300">
       <h3 className="text-lg font-semibold text-primary">
         Adicionar faixa via YouTube
       </h3>
 
       {/* GÊNERO */}
-      <div className="grid grid-cols-2 gap-2">
-        <select
-          value={selectedGenreId ?? ""}
-          onChange={(e) => setSelectedGenreId(Number(e.target.value) || null)}
-          className="modal-select"
-        >
-          <option value="">Selecionar gênero</option>
-          {genres.map((g) => (
-            <option key={g.id} value={g.id}>
-              {g.name}
-            </option>
-          ))}
-        </select>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="flex flex-col gap-1">
+          <label className="text-xs text-muted md:hidden">
+            Selecionar Gênero
+          </label>
+          <select
+            value={selectedGenreId ?? ""}
+            onChange={(e) => setSelectedGenreId(Number(e.target.value) || null)}
+            className="modal-select w-full"
+          >
+            <option value="">Selecionar gênero</option>
+            {genres.map((g) => (
+              <option key={g.id} value={g.id}>
+                {g.name}
+              </option>
+            ))}
+          </select>
+        </div>
 
-        <input
-          placeholder="Novo gênero"
-          value={newGenreName}
-          onChange={(e) => setNewGenreName(e.target.value)}
-          className="modal-input"
-        />
+        <div className="flex flex-col gap-1">
+          <label className="text-xs text-muted md:hidden">Ou criar novo</label>
+          <input
+            placeholder="Novo gênero"
+            value={newGenreName}
+            onChange={(e) => setNewGenreName(e.target.value)}
+            className="modal-input w-full"
+          />
+        </div>
       </div>
 
       {/* ARTISTA */}
-      <div className="grid grid-cols-2 gap-2">
-        <select
-          value={selectedArtistId ?? ""}
-          onChange={(e) => setSelectedArtistId(Number(e.target.value) || null)}
-          className="modal-select"
-        >
-          <option value="">Selecionar artista</option>
-          {artists.map((a) => (
-            <option key={a.id} value={a.id}>
-              {a.name}
-            </option>
-          ))}
-        </select>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="flex flex-col gap-1">
+          <label className="text-xs text-muted md:hidden">
+            Selecionar Artista
+          </label>
+          <select
+            value={selectedArtistId ?? ""}
+            onChange={(e) =>
+              setSelectedArtistId(Number(e.target.value) || null)
+            }
+            className="modal-select w-full"
+          >
+            <option value="">Selecionar artista</option>
+            {artists.map((a) => (
+              <option key={a.id} value={a.id}>
+                {a.name}
+              </option>
+            ))}
+          </select>
+        </div>
 
-        <input
-          placeholder="Novo artista"
-          value={newArtistName}
-          onChange={(e) => setNewArtistName(e.target.value)}
-          className="modal-input"
-        />
+        <div className="flex flex-col gap-1">
+          <label className="text-xs text-muted md:hidden">Ou criar novo</label>
+          <input
+            placeholder="Novo artista"
+            value={newArtistName}
+            onChange={(e) => setNewArtistName(e.target.value)}
+            className="modal-input w-full"
+          />
+        </div>
       </div>
 
       {/* ÁLBUM */}
-      <div className="grid grid-cols-2 gap-2">
-        <select
-          value={selectedAlbumId ?? ""}
-          onChange={(e) => setSelectedAlbumId(Number(e.target.value) || null)}
-          className="modal-select"
-        >
-          <option value="">Selecionar álbum</option>
-          {albums.map((a) => (
-            <option key={a.id} value={a.id}>
-              {a.title}
-            </option>
-          ))}
-        </select>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="flex flex-col gap-1">
+          <label className="text-xs text-muted md:hidden">
+            Selecionar Álbum
+          </label>
+          <select
+            value={selectedAlbumId ?? ""}
+            onChange={(e) => setSelectedAlbumId(Number(e.target.value) || null)}
+            className="modal-select w-full"
+          >
+            <option value="">Selecionar álbum</option>
+            {albums.map((a) => (
+              <option key={a.id} value={a.id}>
+                {a.title}
+              </option>
+            ))}
+          </select>
+        </div>
 
-        <input
-          placeholder="Novo álbum"
-          value={newAlbumTitle}
-          onChange={(e) => setNewAlbumTitle(e.target.value)}
-          className="modal-input"
-        />
+        <div className="flex flex-col gap-1">
+          <label className="text-xs text-muted md:hidden">Ou criar novo</label>
+          <input
+            placeholder="Novo álbum"
+            value={newAlbumTitle}
+            onChange={(e) => setNewAlbumTitle(e.target.value)}
+            className="modal-input w-full"
+          />
+        </div>
       </div>
 
       {/* URL */}
-      <input
-        placeholder="URL do YouTube"
-        value={youtubeUrl}
-        onChange={(e) => setYoutubeUrl(e.target.value)}
-        className="modal-input w-full"
-      />
+      <div className="space-y-1">
+        <label className="text-xs text-muted md:hidden">URL do YouTube</label>
+        <input
+          placeholder="URL do YouTube"
+          value={youtubeUrl}
+          onChange={(e) => setYoutubeUrl(e.target.value)}
+          className="modal-input w-full"
+        />
+      </div>
 
-      {/* META + AÇÃO */}
-      <div className="flex justify-between items-end gap-4">
+      {/* META + AÇÃO - Melhora no empilhamento mobile */}
+      <div className="flex flex-col md:flex-row justify-between items-stretch md:items-end gap-6">
         <div className="flex gap-4">
-          <div className="flex flex-col gap-1 w-32">
+          <div className="flex flex-col gap-1 flex-1 md:w-32">
             <label className="text-xs text-muted">Faixa</label>
             <input
               type="number"
               min={1}
               value={trackNumber}
               onChange={(e) => setTrackNumber(Number(e.target.value))}
-              className="modal-input"
+              className="modal-input w-full"
             />
           </div>
 
-          <div className="flex flex-col gap-1 w-32">
+          <div className="flex flex-col gap-1 flex-1 md:w-32">
             <label className="text-xs text-muted">Ano</label>
             <input
               type="number"
               value={year ?? ""}
               onChange={(e) => setYear(Number(e.target.value))}
-              className="modal-input"
+              className="modal-input w-full"
             />
           </div>
         </div>
@@ -221,14 +250,26 @@ export function DownloadTrackForm() {
         <button
           disabled={loading}
           onClick={handleSubmit}
-          className="modal-btn-primary disabled:opacity-50"
+          className="modal-btn-primary w-full md:w-auto h-11 px-8 disabled:opacity-50 transition-all active:scale-95"
         >
           {loading ? "Baixando..." : "Iniciar download"}
         </button>
       </div>
 
-      {error && <p className="text-danger text-sm">{error}</p>}
-      {success && <p className="text-success text-sm">{success}</p>}
+      {(error || success) && (
+        <div className="pt-2">
+          {error && (
+            <p className="text-danger text-sm text-center md:text-left">
+              {error}
+            </p>
+          )}
+          {success && (
+            <p className="text-success text-sm text-center md:text-left">
+              {success}
+            </p>
+          )}
+        </div>
+      )}
     </div>
   );
 }

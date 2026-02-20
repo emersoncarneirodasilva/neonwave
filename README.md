@@ -1,6 +1,6 @@
 # 🌊 NeonWave
 
-<img width="1232" height="865" alt="image" src="https://github.com/user-attachments/assets/bec90574-f7b0-439d-9d9c-527ec14bb2cb" />
+<img width="1228" height="856" alt="image" src="https://github.com/user-attachments/assets/547bc6a5-464f-4b83-bf29-dcc56f37039d" />  
 
 **NeonWave** é um ecossistema musical desktop completo para download e reprodução de áudio. Desenvolvido com **Electron**, **React 19** e **TypeScript**, ele une a liberdade do armazenamento local com uma interface futurista, fluida e altamente personalizável.
 

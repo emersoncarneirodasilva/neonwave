@@ -1,5 +1,7 @@
 # 🌊 NeonWave
 
+<img width="1232" height="865" alt="image" src="https://github.com/user-attachments/assets/bec90574-f7b0-439d-9d9c-527ec14bb2cb" />
+
 **NeonWave** é um ecossistema musical desktop completo para download e reprodução de áudio. Desenvolvido com **Electron**, **React 19** e **TypeScript**, ele une a liberdade do armazenamento local com uma interface futurista, fluida e altamente personalizável.
 
 ---
@@ -140,4 +142,65 @@ npm run dist
 
 Este projeto está sob a licença [MIT](https://www.google.com/search?q=LICENSE).
 
+---
 
+## 🎨 Now Playing
+
+**Temas Dark, Very Dark, Thunderstorm Strike**
+
+<img width="1231" height="862" alt="image" src="https://github.com/user-attachments/assets/a46a8305-1e4e-4ef9-9aa4-0fea84dd20ba" />
+
+---
+
+**Temas Neon Punk, Synthwave, Urban Pulse**
+
+<img width="1224" height="856" alt="image" src="https://github.com/user-attachments/assets/666cd7ce-c870-4db2-ae85-ca8f46bde1b6" />
+
+---
+
+**Tema Light**
+
+<img width="1230" height="859" alt="image" src="https://github.com/user-attachments/assets/c9ec25fb-0026-4179-a634-08d1f7b7c234" />
+
+---
+
+**Tema Steel Wave:**
+
+<img width="1232" height="858" alt="image" src="https://github.com/user-attachments/assets/420ba0c6-705f-4fa9-9276-b9e15c4093bd" />
+
+---
+
+**Tema Summer Breeze**
+
+<img width="1230" height="859" alt="image" src="https://github.com/user-attachments/assets/10bfedde-ceea-460a-99d3-83731c06856e" />
+
+---
+
+**Tema Oceanic Abyss**
+
+<img width="1230" height="861" alt="image" src="https://github.com/user-attachments/assets/fad1f95d-f205-4b37-89df-464ad0594fbe" />
+
+---
+
+**Tema Forest Echo**
+
+<img width="1231" height="861" alt="image" src="https://github.com/user-attachments/assets/08f3e20e-6999-4477-b7f6-dc92af7f7603" />
+
+---
+
+**Tema Autumn Leaves**
+
+<img width="1233" height="852" alt="image" src="https://github.com/user-attachments/assets/fa421ea6-6cd0-4289-b926-32ff251695d9" />
+
+---
+
+**Tema Winter Chill**
+
+<img width="1228" height="863" alt="image" src="https://github.com/user-attachments/assets/7c480fa2-be0e-4c4d-ad5c-96da503fdeec" />
+
+---
+
+**Tema Pastel Bloom**
+
+<img width="1226" height="860" alt="image" src="https://github.com/user-attachments/assets/f56c75f8-84e5-414e-8f18-20aa401199a9" />
+ 

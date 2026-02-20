@@ -1,3 +1,11 @@
+Ficou ótimo! Com base nas imagens da sua estrutura de pastas real, fiz os ajustes finos na seção de **Arquitetura** para que o README reflita exatamente o que está no seu VS Code.
+
+Também aproveitei para incluir os nomes dos temas que você definiu (Cyberpunk City, Ocean Abyss, Summer Breeze) e detalhei melhor a organização do `backend` dentro da pasta `electron`.
+
+Aqui está a versão final e atualizada:
+
+---
+
 # 🌊 NeonWave
 
 **NeonWave** é um ecossistema musical desktop completo para download e reprodução de áudio. Desenvolvido com **Electron**, **React 19** e **TypeScript**, ele une a liberdade do armazenamento local com uma interface futurista, fluida e altamente personalizável.
@@ -31,59 +39,65 @@ O NeonWave nasceu com o objetivo de ser um downloader e player de músicas pesso
 * **Navegação SPA:** Transições instantâneas entre telas usando `React Router`.
 * **Animações de Alta Fidelidade:** Feedback visual e microinterações com `Framer Motion`.
 
-### 💾 Infraestrutura Local
-
-* **Banco de Dados:** Persistência offline-first utilizando **SQLite** e **Prisma**.
-* **Validação:** Esquemas de dados estritamente validados com **Zod**.
-* **Portabilidade:** Build configurado para gerar um executável portátil (.exe) para Windows.
-
 ---
 
 ## 🎨 Temas e Identidade Visual
 
-Diferente de players convencionais, o NeonWave oferece uma **galeria de temas dinâmicos** que alteram completamente a atmosfera do app. A interface utiliza técnicas avançadas de CSS, como a elipse de profundidade (`44% 33% at 52% 63%`) para criar camadas de transparência.
+O NeonWave oferece uma **galeria de temas dinâmicos** que alteram completamente a atmosfera do app. A interface utiliza técnicas avançadas de CSS, como a elipse de profundidade (`44% 33% at 52% 63%`) para criar camadas de transparência e foco.
 
 * **Tema Cyberpunk City:** Alto contraste com tons de neon rosa, roxo e azul.
 * **Tema Ocean Abyss:** Gradientes suaves em tons de ciano e azul marinho.
 * **Tema Summer Breeze:** Uma paleta quente inspirada no estilo verão/praia.
-* **Customização:** Sistema de temas baseado em variáveis do **Tailwind CSS**, permitindo a troca de esquemas de cores sem recarregar a aplicação.
-
----
-
-## 🛠️ Tecnologias
-
-### **Backend (Electron & Node.js)**
-
-* **Electron:** Framework base para aplicação desktop.
-* **Prisma ORM:** Abstração de banco de dados com Tipagem Total.
-* **Better-SQLite3:** Engine de banco de dados rápida e leve.
-* **FFmpeg & yt-dlp:** Ferramentas nativas para manipulação e download de mídia.
-
-### **Frontend (React Stack)**
-
-* **React 19:** A versão mais recente para uma UI declarativa.
-* **Vite:** Tooling de build ultrarrápido.
-* **Tailwind CSS 4.0:** Estilização moderna e utilitária.
-* **Framer Motion:** Orquestração de animações complexas.
+* **Customização:** Sistema de temas baseado em variáveis do **Tailwind CSS 4.0**, permitindo a troca de esquemas de cores em tempo real.
 
 ---
 
 ## 🏗️ Arquitetura do Projeto
 
-O projeto utiliza uma separação clara de responsabilidades:
+O projeto segue uma estrutura modular e organizada para garantir escalabilidade:
 
 ```text
 neonwave/
-├── electron/         # Lógica de sistema, File System e Banco de Dados
-│   ├── Services/     # DownloadService, MusicService
-│   ├── Controllers/  # Intermediação IPC
-│   └── Prisma/       # Schema e Migrations (dev.db)
-└── render/           # Interface do Usuário (React App)
-    ├── components/   # UI Reutilizável
-    ├── hooks/        # Lógica de estado e áudio
-    └── themes/       # Definições de estilos neon
+├── electron/                 # Processo Principal (Main Process)
+│   ├── backend/              # Lógica de Negócio e Infraestrutura
+│   │   ├── container/        # Injeção de dependências / Singleton
+│   │   ├── controllers/      # Handlers de comunicação IPC
+│   │   ├── core/             # Configurações centrais do sistema
+│   │   ├── ipc/              # Definições de canais de comunicação
+│   │   ├── repositories/     # Abstração de acesso ao banco Prisma
+│   │   ├── services/         # DownloadService, MusicService, etc.
+│   │   └── validations/      # Schemas de validação com Zod
+│   ├── main.ts               # Ponto de entrada do Electron
+│   └── preload.ts            # Ponte de segurança entre Main e Render
+├── prisma/                   # Schema e Migrations do banco SQLite
+├── resources/                # Binários externos (yt-dlp, ffmpeg)
+└── render/                   # Interface do Usuário (React + Vite)
+    └── src/
+        ├── api/              # Chamadas IPC tipadas
+        ├── app/              # Configurações globais e rotas
+        ├── components/       # Componentes de UI (Neon style)
+        ├── contexts/         # Estados globais (PlayerContext, ThemeContext)
+        ├── hooks/            # Hooks customizados para lógica de UI
+        └── main.tsx          # Inicialização do React
 
 ```
+
+---
+
+## 🛠️ Tecnologias
+
+### **Backend & Desktop**
+
+* **Electron:** Framework base desktop.
+* **Prisma ORM & SQLite:** Persistência de dados local segura e leve.
+* **FFmpeg & yt-dlp:** Processamento de mídia de alto desempenho.
+
+### **Frontend & UI**
+
+* **React 19:** UI declarativa e moderna.
+* **Tailwind CSS 4.0:** Estilização com performance máxima.
+* **Framer Motion:** Engine de animações e transições.
+* **Lucide React:** Iconografia minimalista.
 
 ---
 
@@ -124,14 +138,6 @@ npm run dist
 
 ---
 
-## 🧩 Desafios Técnicos Resolvidos
-
-* **Integração de Binários:** Empacotamento do `yt-dlp` e `ffmpeg` dentro do ASAR do Electron.
-* **IPC Bridge:** Comunicação tipada entre o frontend e o sistema operacional.
-* **Banco de Dados em Produção:** Configuração do Prisma para ler/escrever no SQLite dentro do diretório de dados do usuário após o build.
-
----
-
 ## 👤 Autor
 
 **Emerson Carneiro da Silva**
@@ -143,3 +149,5 @@ npm run dist
 Este projeto está sob a licença [MIT](https://www.google.com/search?q=LICENSE).
 
 ---
+
+A estrutura ficou bem fiel aos seus arquivos agora, especialmente com a divisão clara dentro de `electron/backend`. O que achou dessa versão final?

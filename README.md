@@ -140,6 +140,4 @@ npm run dist
 
 Este projeto está sob a licença [MIT](https://www.google.com/search?q=LICENSE).
 
----
 
-A estrutura ficou bem fiel aos seus arquivos agora, especialmente com a divisão clara dentro de `electron/backend`. O que achou dessa versão final?

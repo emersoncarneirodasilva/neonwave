@@ -1,4 +1,4 @@
-<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/47acc24e-e616-4695-921d-1d72739e4dbe" /><img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/47acc24e-e616-4695-921d-1d72739e4dbe" /><img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/47acc24e-e616-4695-921d-1d72739e4dbe" /># 🌊 NeonWave
+# 🌊 NeonWave
 
 <img width="1228" height="856" alt="image" src="https://github.com/user-attachments/assets/547bc6a5-464f-4b83-bf29-dcc56f37039d" />  
 

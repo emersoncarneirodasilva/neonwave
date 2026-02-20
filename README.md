@@ -1,8 +1,8 @@
 # 🌊 NeonWave
 
-<img width="1228" height="856" alt="image" src="https://github.com/user-attachments/assets/547bc6a5-464f-4b83-bf29-dcc56f37039d" />  
-
 **NeonWave** é um ecossistema musical desktop completo para download e reprodução de áudio. Desenvolvido com **Electron**, **React 19** e **TypeScript**, ele une a liberdade do armazenamento local com uma interface futurista, fluida e altamente personalizável.
+
+<img width="1228" height="856" alt="image" src="https://github.com/user-attachments/assets/547bc6a5-464f-4b83-bf29-dcc56f37039d" />  
 
 ---
 
@@ -129,6 +129,17 @@ Para gerar o executável portátil na pasta `/release`:
 npm run dist
 
 ```
+
+---
+
+## ⚠️ Aviso Legal (Disclaimer)
+Este projeto foi desenvolvido estritamente para fins educacionais e de estudo pessoal.
+
+* Finalidade: O NeonWave demonstra a integração de tecnologias como Electron, React e bancos de dados locais.
+
+* Responsabilidade: O autor não incentiva nem se responsabiliza pelo download de conteúdos protegidos por direitos autorais. O uso desta ferramenta para baixar qualquer mídia deve respeitar os Termos de Serviço das plataformas de origem e as leis de copyright vigentes.
+
+* Uso: Destinado apenas para uso privado e pessoal.
 
 ---
 

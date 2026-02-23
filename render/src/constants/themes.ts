@@ -13,6 +13,7 @@ import {
   TreeDeciduous,
   CloudLightning,
   Lightbulb,
+  Flower,
 } from "lucide-react";
 
 export const THEMES = [
@@ -34,4 +35,5 @@ export const THEMES = [
     name: "Thunderstorm Strike",
     icon: CloudLightning,
   },
+  { id: "terrawave", name: "Terra Wave", icon: Flower },
 ];

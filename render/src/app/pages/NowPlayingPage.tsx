@@ -9,6 +9,7 @@ import { PastelBloom } from "../../components/NowPlaying/PastelBloom";
 import { PureLight } from "../../components/NowPlaying/PureLight";
 import { DeepTechno } from "../../components/NowPlaying/DeepTechno";
 import { SteelWave } from "../../components/NowPlaying/SteelWave";
+import { TerraWave } from "../../components/NowPlaying/TerraWave";
 
 // 1. Mapeamento de Temas -> Cenários
 const SCENARIO_MAP: Record<string, React.ComponentType> = {
@@ -26,6 +27,7 @@ const SCENARIO_MAP: Record<string, React.ComponentType> = {
   verydark: DeepTechno,
   thunderstorm: DeepTechno,
   steelwave: SteelWave,
+  terrawave: TerraWave,
 };
 
 export function NowPlayingPage() {

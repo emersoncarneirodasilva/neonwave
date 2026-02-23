@@ -1465,6 +1465,121 @@
   --modal-btn-danger-text: #ffffff;
 }
 
+/* =========================
+   TERRAWAVE THEME (LIGHT SOFT)
+========================= */
+:root[data-theme="terrawave"] {
+  /* -------------------------
+      BACKGROUNDS
+  ------------------------- */
+  --bg: #f8f4f2; /* fundo geral, tom areia claríssimo */
+  --bg-primary: #ffffff; /* fundo de containers branco puro */
+  --surface: #f1e9e7; /* cards / listas em tom argila clara */
+  --surface-muted: #eaddda; /* hovers leves */
+
+  /* Navlink active bg */
+  --navlink-bg-active: rgba(209, 134, 128, 0.15); /* #d18680 translúcido */
+
+  /* -------------------------
+      BRAND / ACCENT COLORS
+  ------------------------- */
+  --primary: #d18680; /* Sua nova cor principal */
+  --primary-hover: #db9d97;
+  --secondary: #eab6af; /* tom salmão suave */
+  --tertiary: #f2d5d0; /* tom pele/claro para detalhes */
+
+  /* -------------------------
+      TEXT COLORS
+  ------------------------- */
+  --text-primary: #5c4a48; /* marrom acinzentado escuro para leitura */
+  --text-muted: #8a7674;
+  --text-disabled: #bdafad;
+
+  /* -------------------------
+      HOVER / FEEDBACK COLORS
+  ------------------------- */
+  --hover-bg: rgba(209, 134, 128, 0.08);
+  --hover-bg-strong: rgba(209, 134, 128, 0.12);
+
+  /* -------------------------
+      STATE COLORS
+  ------------------------- */
+  --success: #88a47c; /* verde sálvia */
+  --danger: #d96c6c;
+  --warning: #e9c46a;
+
+  /* -------------------------
+      BORDERS
+  ------------------------- */
+  --border: rgba(209, 134, 128, 0.25);
+
+  /* -------------------------
+      INPUTS (SOLIDOS E COM GLOW)
+  ------------------------- */
+  --bg-input: #ffffff; /* input branco para contraste no fundo areia */
+  --input-border: rgba(209, 134, 128, 0.4);
+  --input-focus: var(--primary);
+  --modal-input-bg: #ffffff;
+  --input-glow: 0 0 8px rgba(209, 134, 128, 0.3);
+
+  /* -------------------------
+      UI / RADIUS
+  ------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* -------------------------
+      ICON COLORS
+  ------------------------- */
+  --icon-default: #8a7674;
+  --icon-hover: var(--primary);
+  --icon-edit: var(--secondary);
+  --icon-danger: #d96c6c;
+  --icon-glow: 0 0 4px var(--primary);
+
+  /* -------------------------
+      BUTTON STATES (COM GLOW)
+  ------------------------- */
+  --btn-primary-hover: #db9d97;
+  --btn-primary-active: #c57670;
+  --btn-primary-glow: 0 0 10px rgba(209, 134, 128, 0.4);
+
+  --btn-secondary-hover: #f2d5d0;
+  --btn-secondary-active: #eab6af;
+  --btn-secondary-glow: 0 0 8px rgba(234, 182, 175, 0.4);
+
+  --btn-danger-hover: #e68585;
+  --btn-danger-active: #d96c6c;
+  --btn-danger-glow: 0 0 6px rgba(217, 108, 108, 0.3);
+
+  /* -------------------------
+      MODAL COLORS
+  ------------------------- */
+  --modal-overlay: rgba(
+    92,
+    74,
+    72,
+    0.4
+  ); /* overlay marrom suave e translúcido */
+  --modal-bg: #ffffff;
+  --modal-border: var(--border);
+
+  --modal-title: var(--text-primary);
+  --modal-text: var(--text-muted);
+
+  --modal-btn-primary-bg: var(--primary);
+  --modal-btn-primary-hover: var(--primary-hover);
+  --modal-btn-primary-text: #ffffff;
+
+  --modal-btn-secondary-text: var(--text-muted);
+  --modal-btn-secondary-hover: var(--text-primary);
+
+  --modal-btn-danger-bg: #d96c6c;
+  --modal-btn-danger-hover: #c55a5a;
+  --modal-btn-danger-text: #ffffff;
+}
+
 /* -------------------------
    BODY BASE
 ------------------------- */
